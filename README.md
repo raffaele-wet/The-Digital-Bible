@@ -1,3 +1,6 @@
+Raffaele Bagnato
+raffaele.wet@gmail.com
+
 # The Digital Bible – Interactive Experience
 
 A modern, immersive, and interactive React web application designed to explore sacred texts through satellite maps, detailed illustrations, and advanced AI textual analysis.
