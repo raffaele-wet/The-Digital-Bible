@@ -45,7 +45,13 @@ function App() {
   if (currentView === 'home') {
     return (
       <div className={`transition-colors duration-300 ${isDarkMode ? 'dark' : ''}`}>
-        <Home onSelectSection={handleSelectSection} language={language} />
+        <Home 
+          onSelectSection={handleSelectSection} 
+          language={language} 
+          onLanguageChange={handleLanguageChange}
+          isDarkMode={isDarkMode}
+          toggleTheme={toggleTheme}
+        />
       </div>
     );
   }

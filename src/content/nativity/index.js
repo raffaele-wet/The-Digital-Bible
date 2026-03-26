@@ -1,13 +1,13 @@
-import imgPrologo from '../../assets/images/prologo.png';
-import imgZaccaria from '../../assets/images/zaccaria.png';
-import imgMaria from '../../assets/images/maria.png';
-import imgElisabetta from '../../assets/images/elisabetta.png';
-import imgCantico from '../../assets/images/cantico_zaccaria.png';
-import imgNascita from '../../assets/images/nascita_gesu.png';
-import imgPastori from '../../assets/images/pastori.png';
-import imgTempio from '../../assets/images/presentazione_tempio.png';
-import imgNazaret from '../../assets/images/ritorno_nazaret.png';
-import imgGesuTempio from '../../assets/images/gesu_tempio.png';
+import imgPrologo from '../../assets/images/Luke_1_1-4.png';
+import imgZaccaria from '../../assets/images/Luke_1_5-25.png';
+import imgMaria from '../../assets/images/Luke_1_26-38.png';
+import imgElisabetta from '../../assets/images/Luke_1_39-56.png';
+import imgCantico from '../../assets/images/Luke_1_57-80.png';
+import imgNascita from '../../assets/images/Luke_2_1-7.png';
+import imgPastori from '../../assets/images/Luke_2_8-20.png';
+import imgTempio from '../../assets/images/Luke_2_21-38.png';
+import imgNazaret from '../../assets/images/Luke_2_39-40.png';
+import imgGesuTempio from '../../assets/images/Luke_2_41-52.png';
 
 const nativityScenes = [
   {
