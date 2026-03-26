@@ -1,13 +1,13 @@
-# The Interactive Bible - Nativity Edition
+# The Digital Bible – Interactive Experience
 
-A modern, bilingual, and interactive React web application designed to explore sacred texts through immersive satellite maps, AI-generated images, and contextual theological analysis.
+A modern, immersive, and interactive React web application designed to explore sacred texts through satellite maps, detailed illustrations, and advanced AI textual analysis.
 
 ## ✨ Features
-- **Bilingual Interface (IT/EN):** Instant hot-swapping between the Italian translation and the English New Living Translation (NLT).
-- **AI Biblical Analyst:** Select any portion of text to receive a deep theological and historical analysis, including insights into original Greek and Aramaic terms.
-- **Biblical Illustrations:** Verses are accompanied by curated illustrations (located in `src/assets/images/`) to provide visual context.
-- **Satellite Map Navigation:** An integrated satellite map automatically tracks geographical locations of biblical events.
-- **Interactive Glossary:** Hover over highlighted keywords to discover contextual theological descriptions.
+- **Bilingual Interface (EN/IT):** Native support for the English New Living Translation (NLT) and Italian versions, with English as the primary default.
+- **AI Biblical Analyst:** High-end textual analysis using Gemini AI. Select any verse to receive context on historical settings, theological meaning, and original Greek/Aramaic terms.
+- **Biblical Illustrations:** Each chapter is accompanied by high-quality illustrations to provide visual immersion.
+- **Satellite Map Navigation:** Integrated geographical tracking of biblical events using interactive satellite maps.
+- **Interactive Glossary:** Hover over highlighted keywords for instant theological insights.
 - **Native Text-to-Speech:** High-quality reading synchronized with the active language.
 
 ## 🖼️ Visual Overview
@@ -17,36 +17,42 @@ A modern, bilingual, and interactive React web application designed to explore s
 | ![Home Page](public/screenshots/home_page.png) | ![Chapter View](public/screenshots/chapter_view.png) | ![AI Analysis](public/screenshots/ai_analysis.png) |
 
 ### 🎥 Project Demo
-[Guarda la demo interattiva](public/screenshots/demo.webp)
-
-> [!TIP]
-> **Progetto in continua evoluzione**: L'architettura a plugin permette di aggiungere facilmente nuovi libri e capitoli della Bibbia semplicemente aggiornando la cartella `src/content/`.
+[Watch the interactive demo](public/screenshots/demo.webp)
 
 ## 🛠 Tech Stack
 - **React** (UI Components & State Management)
-- **Tailwind CSS** (Styling, Layouts & Dark Mode)
-- **Leaflet (Maps)** (Geographical Data Integration)
-- **Vite** (Build Tool & Fast Dev Server)
+- **Tailwind CSS** (Styling & Dark Mode)
+- **Google Gemini API** (Theological AI Analysis)
+- **Leaflet** (Interactive Satellite Maps)
+- **Vite** (Build Tool)
 
 ## 🚀 Installation & Setup
 
-1. **Clone the repository** and navigate into the project folder:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/interactive-bible.git
-   cd interactive-bible
+   git clone https://github.com/raffaele-wet/Progetto_Bibbia.git
+   cd Progetto_Bibbia
    ```
 
-2. **Install the dependencies:**
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Start the local development server:**
+3. **Configure Environment**: 
+   Create a `.env.local` file in the root and add your API key:
+   ```env
+   VITE_AI_API_KEY=your_gemini_api_key_here
+   ```
+
+4. **Start the development server**:
    ```bash
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:5173/` to explore the application.
-
 ## 🤝 Contributing
-Contributions are highly welcome! Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for detailed instructions on how to easily add new biblical chapters leveraging the app's decoupled plugin architecture.
+Contributions are welcome! This project uses a decoupled plugin architecture, making it easy to add new biblical chapters by updating the `src/content/` directory.
+
+---
+> [!NOTE]
+> This project is designed for both academic study and personal spiritual exploration.

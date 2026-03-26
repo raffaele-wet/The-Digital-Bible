@@ -10,7 +10,7 @@ import { glossary } from './content/glossary';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [language, setLanguage] = useState('it');
+  const [language, setLanguage] = useState('en');
   
   // Routing / View State
   const [currentView, setCurrentView] = useState('home'); // 'home' | 'reader'
