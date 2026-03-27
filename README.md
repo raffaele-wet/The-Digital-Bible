@@ -15,26 +15,38 @@ A modern, immersive, and interactive React web application designed to explore s
 
 ## 🖼️ Visual Overview
 
-| Main Landing Page | Deep Insight (50/50 View) | AI Analysis Drawer |
+| Main Landing Page | Chapter View | Glossary Popup |
 | :---: | :---: | :---: |
-| ![Home Page](public/screenshots/home_page.png) | ![Deep Insight](public/screenshots/chapter_view.png) | ![AI Analysis](public/screenshots/ai_analysis.png) |
+| ![Home Page](public/screenshots/home_page.png) | ![Chapter View](public/screenshots/chapter_view.png) | ![Glossary](public/screenshots/glossary_popup.png) |
+
+| AI Analysis Drawer | Deep Insight (50/50 View) |
+| :---: | :---: |
+| ![AI Analysis](public/screenshots/ai_analysis.png) | ![Deep Insight](public/screenshots/deep_insight.png) |
 
 ### 🎥 Project Demo
 [Watch the interactive session demo](public/screenshots/demo.webp)
 
 ## 📖 How to Use
 
-### 1. Exploring Deep Insights
+### 1. Navigating and Reading
+On the **Home Page**, click on a story card (e.g., "The Birth") to enter reading mode. Use the sidebar map to track locations or the top playback controls for text-to-speech.
+
+### 2. Exploring Deep Insights
 Inside a chapter, look for words with an **orange dashed underline**. 
 - **Click the term**: The layout will shift from a 3-column view to a 2-column "Deep Insight" mode.
-- **Read details**: The right panel will display a rich theological commentary, including historical references.
-- **Return**: Click the "Torna alla lettura" (Back to reading) button to restore the original layout.
+- **Read details**: The right panel will display a rich theological commentary, including historical and scriptural references.
+- **Return**: Click the "Back to Reading" button to restore the original layout.
 
-### 2. Using the AI Biblical Analyst
-For a deeper personalized study of any verse or phrase:
+### 3. Using the Glossary
+Words highlighted in **yellow** (like "Gabriel" or "Nazareth") contain quick definitions:
+- **Click or Hover**: A popup will appear with a concise explanation of the person, place, or term.
+
+### 4. Using the AI Biblical Analyst
+For a personalized study of any verse or phrase:
 1. **Select the Text**: Use your mouse to highlight any portion of the Bible text.
-2. **Click "Analizza brano"**: A small floating action button will appear near your selection.
-3. **Review Analysis**: A right-side drawer will open, where the AI Analyst (Gemini) will provide a detailed breakdown of the selected verses, including historical context and linguistic nuances.
+2. **Click the AI Icon**: A small action button will appear near your selection.
+3. **Ask the Analyst**: A right-side drawer will open. You can ask specific questions like *"Who is Gabriel?"* or *"Analyze the Greek root of this word."*
+4. **Review Analysis**: The AI provides a detailed breakdown including historical context and linguistic nuances.
 
 ## 🛠 Tech Stack
 - **React** (UI Components & State Management)
