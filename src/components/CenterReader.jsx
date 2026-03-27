@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Play, Pause, FastForward, Rewind, Sparkles } from 'lucide-react';
 import InteractiveWord from './InteractiveWord';
 import ChatPopup from './ChatPopup';
+import InsightLink from './InsightLink';
 
-const CenterReader = ({ scene, glossary = [], language = 'it' }) => {
+const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [fontSize, setFontSize] = useState(18); // default font size
 
@@ -79,7 +80,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it' }) => {
   if (!scene) return null;
 
   // Funzione per renderizzare il testo convertendo le parole del glossario in componenti InteractiveWord
-  const renderTextWithGlossary = (text) => {
+  const renderTextWithGlossary = (text, parentIndex = 0) => {
     if (!text || !glossary || glossary.length === 0) return text;
 
     const wordMap = new Map();
@@ -111,15 +112,56 @@ const CenterReader = ({ scene, glossary = [], language = 'it' }) => {
         const info = wordMap.get(lowerPart);
         return (
           <InteractiveWord 
-            key={`${i}-${lowerPart}`} 
+            key={`glossary-${parentIndex}-${i}-${lowerPart}`} 
             word={part} 
             title={info.term}
             explanation={info.description} 
           />
         );
       }
-      return part; // testo semplice
+      return <React.Fragment key={`text-${parentIndex}-${i}`}>{part}</React.Fragment>; // testo semplice
     });
+  };
+
+  // Funzione per renderizzare i link dei Deep Insight [[Parola|id_insight]]
+  const renderVerseText = (text) => {
+    if (!text) return text;
+    // Regex per [[Parola|id_insight]]
+    const insightRegex = /\[\[([^|]+)\|([^\]]+)\]\]/g;
+    const parts = [];
+    let lastIndex = 0;
+    
+    let match;
+    while ((match = insightRegex.exec(text)) !== null) {
+      // Il testo prima dell'insight lo passiamo al glossario
+      const beforeText = text.substring(lastIndex, match.index);
+      if (beforeText) {
+        parts.push(renderTextWithGlossary(beforeText, parts.length));
+      }
+      
+      const displayWord = match[1];
+      const insightId = match[2];
+      
+      parts.push(
+        <InsightLink 
+          key={`insight-${match.index}`} 
+          insightId={insightId} 
+          onInsightClick={onInsightClick}
+        >
+          {displayWord}
+        </InsightLink>
+      );
+      
+      lastIndex = insightRegex.lastIndex;
+    }
+    
+    // Il resto del testo
+    const remainingText = text.substring(lastIndex);
+    if (remainingText) {
+      parts.push(renderTextWithGlossary(remainingText, parts.length));
+    }
+    
+    return parts;
   };
 
   return (
@@ -211,7 +253,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it' }) => {
                     </sup>
                   </span>
                   <span>
-                    {renderTextWithGlossary(textContent)}{' '}
+                    {renderVerseText(textContent)}{' '}
                   </span>
                 </React.Fragment>
               );

@@ -5,6 +5,7 @@ import RightPanel from './components/RightPanel';
 import CenterReader from './components/CenterReader';
 import NavigationArrows from './components/NavigationArrows';
 import Home from './components/Home';
+import InsightPanel from './components/InsightPanel';
 import { availableSections } from './content/config';
 import { glossary } from './content/glossary';
 
@@ -16,6 +17,7 @@ function App() {
   const [currentView, setCurrentView] = useState('home'); // 'home' | 'reader'
   const [currentSection, setCurrentSection] = useState(null);
   const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
+  const [activeInsight, setActiveInsight] = useState(null);
 
   const currentSectionData = availableSections.find(s => s.id === currentSection)?.data || [];
 
@@ -35,10 +37,12 @@ function App() {
     setCurrentSection(section);
     setCurrentSceneIndex(0);
     setCurrentView('reader');
+    setActiveInsight(null);
   };
 
   const handleGoHome = () => {
     setCurrentView('home');
+    setActiveInsight(null);
   };
 
   // Se siamo sulla home screen a pieno schermo
@@ -80,22 +84,49 @@ function App() {
           isLast={currentSceneIndex === currentSectionData.length - 1 || currentSectionData.length === 0}
         />
 
-        {/* 3 Colonne Principali */}
+        {/* 3 Colonne Principali o Layout Deep Insight */}
         <main className="flex flex-row w-full h-full max-w-7xl mx-auto z-10 pt-4 pb-4 px-2 sm:px-4">
-          {/* Sinistra (25%) */}
-          <div className="w-1/4 h-full hidden md:block border-r border-gray-200 dark:border-gray-800 pr-4">
+          
+          {/* Sinistra (25% o 0%) */}
+          <div className={`h-full hidden md:block border-r border-gray-200 dark:border-gray-800 transition-all duration-700 ease-in-out overflow-hidden flex-shrink-0
+            ${activeInsight ? 'w-0 opacity-0 px-0 border-transparent border-r-0' : 'w-1/4 opacity-100 pr-4'}
+          `}>
             <LeftPanel scene={currentSectionData[currentSceneIndex]} language={language} />
           </div>
 
           {/* Centro (50%) */}
-          <div className="w-full md:w-2/4 h-full overflow-hidden flex flex-col min-h-0 px-0 md:px-4">
-            <CenterReader scene={currentSectionData[currentSceneIndex]} glossary={glossary} language={language} />
+          <div className={`h-full overflow-hidden flex flex-col min-h-0 px-0 md:px-4 transition-all duration-700 ease-in-out shrink-0
+            ${activeInsight ? 'w-full md:w-2/4' : 'w-full md:w-2/4'}
+          `}>
+            {/* The CenterReader remains exactly 50% width on desktop, but shifted left because LeftPanel shrinks */}
+            <CenterReader 
+              scene={currentSectionData[currentSceneIndex]} 
+              glossary={glossary} 
+              language={language}
+              onInsightClick={(id) => setActiveInsight(id)}
+            />
           </div>
 
-          {/* Destra (25%) */}
-          <div className="w-1/4 h-full hidden md:block border-l border-gray-200 dark:border-gray-800 pl-4">
+          {/* Destra Layout C: Deep Insight Panel (50% o 0%) */}
+          <div className={`h-full overflow-hidden transition-all duration-700 ease-in-out shrink-0
+            ${activeInsight ? 'w-full md:w-2/4 opacity-100' : 'w-0 opacity-0'}
+          `}>
+            {activeInsight && (
+              <InsightPanel 
+                insightId={activeInsight} 
+                onClose={() => setActiveInsight(null)} 
+                language={language} 
+              />
+            )}
+          </div>
+
+          {/* Destra Layout A: Mappa Luoghi (25% o 0%) */}
+          <div className={`h-full hidden md:block border-l border-gray-200 dark:border-gray-800 transition-all duration-700 ease-in-out overflow-hidden flex-shrink-0
+            ${activeInsight ? 'w-0 opacity-0 pl-0 border-transparent border-l-0' : 'w-1/4 opacity-100 pl-4'}
+          `}>
             <RightPanel scene={currentSectionData[currentSceneIndex]} language={language} />
           </div>
+
         </main>
       </div>
 

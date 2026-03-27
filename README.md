@@ -7,6 +7,7 @@ A modern, immersive, and interactive React web application designed to explore s
 
 ## ✨ Features
 - **Bilingual Interface (EN/IT):** Native support for the English New Living Translation (NLT) and Italian versions, with English as the primary default.
+- **Deep Insights Panel:** Interactive in-text theological and historical references that dynamically transform the layout to show extensive bilingual context for key biblical verses.
 - **AI Biblical Analyst:** High-end textual analysis using Gemini AI. Select any verse to receive context on historical settings, theological meaning, and original Greek/Aramaic terms.
 - **Biblical Illustrations:** Each chapter is accompanied by high-quality illustrations to provide visual immersion.
 - **Satellite Map Navigation:** Integrated geographical tracking of biblical events using interactive satellite maps.
