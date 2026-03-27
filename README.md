@@ -7,21 +7,34 @@ A modern, immersive, and interactive React web application designed to explore s
 
 ## ✨ Features
 - **Bilingual Interface (EN/IT):** Native support for the English New Living Translation (NLT) and Italian versions, with English as the primary default.
-- **Deep Insights Panel:** Interactive in-text theological and historical references that dynamically transform the layout to show extensive bilingual context for key biblical verses.
-- **AI Biblical Analyst:** High-end textual analysis using Gemini AI. Select any verse to receive context on historical settings, theological meaning, and original Greek/Aramaic terms.
+- **Deep Insights Panel:** Interactive in-text theological and historical references. Clicking on highlighted terms (orange dashed underline) dynamically expands the layout to a side-by-side view with extensive bilingual context.
+- **AI Biblical Analyst:** High-end textual analysis using Gemini AI. Select any text segment to receive instant context on historical settings, theological meaning, and original Greek/Aramaic term analysis.
 - **Biblical Illustrations:** Each chapter is accompanied by high-quality illustrations to provide visual immersion.
 - **Satellite Map Navigation:** Integrated geographical tracking of biblical events using interactive satellite maps.
-- **Interactive Glossary:** Hover over highlighted keywords for instant theological insights.
 - **Native Text-to-Speech:** High-quality reading synchronized with the active language.
 
 ## 🖼️ Visual Overview
 
-| Home Page | Chapter View | AI Analysis |
+| Main Landing Page | Deep Insight (50/50 View) | AI Analysis Drawer |
 | :---: | :---: | :---: |
-| ![Home Page](public/screenshots/home_page.png) | ![Chapter View](public/screenshots/chapter_view.png) | ![AI Analysis](public/screenshots/ai_analysis.png) |
+| ![Home Page](public/screenshots/home_page.png) | ![Deep Insight](public/screenshots/chapter_view.png) | ![AI Analysis](public/screenshots/ai_analysis.png) |
 
 ### 🎥 Project Demo
-[Watch the interactive demo](public/screenshots/demo.webp)
+[Watch the interactive session demo](public/screenshots/demo.webp)
+
+## 📖 How to Use
+
+### 1. Exploring Deep Insights
+Inside a chapter, look for words with an **orange dashed underline**. 
+- **Click the term**: The layout will shift from a 3-column view to a 2-column "Deep Insight" mode.
+- **Read details**: The right panel will display a rich theological commentary, including historical references.
+- **Return**: Click the "Torna alla lettura" (Back to reading) button to restore the original layout.
+
+### 2. Using the AI Biblical Analyst
+For a deeper personalized study of any verse or phrase:
+1. **Select the Text**: Use your mouse to highlight any portion of the Bible text.
+2. **Click "Analizza brano"**: A small floating action button will appear near your selection.
+3. **Review Analysis**: A right-side drawer will open, where the AI Analyst (Gemini) will provide a detailed breakdown of the selected verses, including historical context and linguistic nuances.
 
 ## 🛠 Tech Stack
 - **React** (UI Components & State Management)
