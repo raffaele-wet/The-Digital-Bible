@@ -17,9 +17,9 @@ export const getGeminiResponse = async (prompt, systemInstruction = "") => {
   }
 
   try {
-    const model = genAI.getGenerativeModel({ 
+    const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash",
-      systemInstruction: systemInstruction 
+      systemInstruction: systemInstruction
     });
 
     console.log("Inviando richiesta a Gemini...");

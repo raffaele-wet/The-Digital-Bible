@@ -70,5 +70,53 @@ export const glossary = [
       it: "Un'anziana vedova e profetessa che serviva Dio nel Tempio con preghiere e digiuni, lodando Dio all'arrivo di Gesù.",
       en: "An elderly widow and prophetess who served God in the Temple with prayers and fasting, praising Him upon Jesus' arrival."
     }
+  },
+  {
+    keywords: { it: ["Verbo", "Parola", "Il Verbo", "La Parola"], en: ["Word", "Logos", "The Word"] },
+    term: { it: "Il Verbo / La Parola", en: "The Word / Logos" },
+    description: {
+      it: "Il termine greco 'Logos'. Indica Gesù come la Parola vivente di Dio, preesistente e divina.",
+      en: "The Greek term 'Logos'. Refers to Jesus as the living Word of God, pre-existent and divine."
+    }
+  },
+  {
+    keywords: { it: ["Giudei", "I Giudei"], en: ["Jews", "The Jews"] },
+    term: { it: "I Giudei", en: "The Jews" },
+    description: {
+      it: "Nel Vangelo di Giovanni, spesso indica non tutto il popolo, ma i capi religiosi di Gerusalemme che si opponevano a Gesù.",
+      en: "In John's Gospel, often refers not to the whole people, but to the religious leaders in Jerusalem who opposed Jesus."
+    }
+  },
+  {
+    keywords: { it: ["Farisei", "I Farisei"], en: ["Pharisees", "The Pharisees"] },
+    term: { it: "I Farisei", en: "The Pharisees" },
+    description: {
+      it: "Gruppo religioso ebraico molto osservante della Legge e delle tradizioni orali. Spesso in conflitto con Gesù per il loro legalismo.",
+      en: "Jewish religious group strictly observant of the Law and oral traditions. Often in conflict with Jesus over their legalism."
+    }
+  },
+  {
+    keywords: { it: ["Sadducei", "I Sadducei"], en: ["Sadducees", "The Sadducees"] },
+    term: { it: "I Sadducei", en: "The Sadducees" },
+    description: {
+      it: "Aristocrazia sacerdotale. A differenza dei Farisei, non credevano nella risurrezione dei morti né negli angeli.",
+      en: "Priestly aristocracy. Unlike the Pharisees, they did not believe in the resurrection of the dead or in angels."
+    }
+  },
+  {
+    keywords: { it: ["Battesimo", "battezzare", "il battesimo"], en: ["Baptism", "baptize", "the baptism"] },
+    term: { it: "Battesimo", en: "Baptism" },
+    description: {
+      it: "Dal greco 'baptizo' (immergere). Un rito di purificazione che simboleggia il ravvedimento e l'inizio di una nuova vita.",
+      en: "From the Greek 'baptizo' (to immerse). A purification rite symbolizing repentance and the beginning of a new life."
+    }
+  },
+  {
+    keywords: { it: ["Giordano", "il Giordano"], en: ["Jordan", "the Jordan"] },
+    term: { it: "Giordano (Fiume)", en: "Jordan (River)" },
+    description: {
+      it: "Il fiume principale della Terra Santa, simbolo di passaggio e purificazione nell'Antico e Nuovo Testamento.",
+      en: "The main river of the Holy Land, a symbol of passage and purification in both the Old and New Testaments."
+    }
   }
 ];

@@ -16,7 +16,7 @@ function MapUpdater({ center }) {
   const map = useMap();
   useEffect(() => {
     if (center && center.length === 2 && center[0] && center[1]) {
-      map.flyTo(center, 13, { duration: 1.5 });
+      map.flyTo(center, 10, { duration: 1.5 });
     }
   }, [center, map]);
   return null;
@@ -46,7 +46,7 @@ const RightPanel = ({ scene, language = 'it' }) => {
       <div className="flex-grow w-full h-full relative z-0 shadow-inner rounded-b-xl overflow-hidden">
         <MapContainer 
           center={coordinate} 
-          zoom={13} 
+          zoom={10} 
           scrollWheelZoom={true} 
           className="w-full h-full absolute inset-0 z-0 rounded-b-xl"
         >

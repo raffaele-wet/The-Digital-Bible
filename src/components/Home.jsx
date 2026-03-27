@@ -60,12 +60,12 @@ const Home = ({ onSelectSection, language = 'it', onLanguageChange, isDarkMode, 
         </div>
 
         {/* Sections Listing - Improved Card Design with Glassmorphism */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-4 w-full px-4 flex-wrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 w-full px-4 max-w-4xl mx-auto place-items-center">
           {availableSections.map((section) => (
             <button
               key={section.id}
               onClick={() => onSelectSection(section.id)}
-              className="group relative flex flex-col items-center justify-center p-8 sm:p-12 md:max-w-sm w-full rounded-3xl overflow-hidden transition-all duration-500 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/50 shadow-2xl"
+              className="group relative flex flex-col items-center justify-center p-8 sm:p-10 w-full rounded-3xl overflow-hidden transition-all duration-500 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/50 shadow-2xl"
             >
               {/* Premium Card Background with Glassmorphism */}
               <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-xl rounded-3xl border border-white/10 group-hover:border-blue-400/40 transition-all duration-500"></div>
@@ -76,13 +76,18 @@ const Home = ({ onSelectSection, language = 'it', onLanguageChange, isDarkMode, 
                   <Book className="w-10 h-10 text-blue-100 group-hover:text-blue-300 transition-colors" />
                 </div>
                 
-                <div className="flex flex-col space-y-3">
+                <div className="flex flex-col space-y-3 items-center">
                   <span className="text-xs tracking-[0.3em] font-bold uppercase text-blue-400 group-hover:text-blue-300 transition-colors">
                     {language === 'it' ? 'Inizia la Lettura' : 'Begin Reading'}
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide group-hover:text-blue-50 transition-colors text-center drop-shadow-lg leading-tight">
+                  <h2 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold text-white tracking-wide group-hover:text-blue-50 transition-colors text-center drop-shadow-lg leading-tight">
                     {section.sectionTitle?.[language] || section.sectionTitle?.['it']}
                   </h2>
+                  {section.description && (
+                    <p className="text-sm font-sans text-gray-400 max-w-[250px] mt-3 group-hover:text-gray-300 transition-colors text-center">
+                      {section.description[language] || section.description['it']}
+                    </p>
+                  )}
                 </div>
               </div>
             </button>

@@ -23,17 +23,22 @@ const InteractiveWord = ({ word, explanation, title }) => {
   };
 
   return (
-    <span className="relative inline-block" ref={popoverRef}>
+    <span 
+      className="relative inline-block" 
+      ref={popoverRef}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <button
         onClick={toggleTooltip}
-        className="font-medium bg-bibbiaHighlight-light dark:bg-bibbiaHighlight-dark/40 text-gray-900 dark:text-gray-100 rounded px-1 cursor-pointer hover:opacity-80 transition-opacity decoration-dashed underline underline-offset-4 decoration-yellow-600 dark:decoration-yellow-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="font-medium bg-yellow-100/80 dark:bg-yellow-900/30 border-b-2 border-yellow-400/50 text-gray-900 dark:text-gray-100 px-1 cursor-pointer hover:bg-yellow-200/80 dark:hover:bg-yellow-800/40 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/50 leading-none py-0.5"
       >
         {word}
       </button>
 
       {/* Pop-up Modale Tooltip */}
       {isOpen && (
-        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 animate-in fade-in zoom-in duration-200">
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 animate-in fade-in zoom-in duration-200 pointer-events-none">
           {/* Arrow */}
           <span className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white dark:border-t-gray-800"></span>
           

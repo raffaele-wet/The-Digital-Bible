@@ -8,6 +8,19 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
   const [isPlaying, setIsPlaying] = useState(false);
   const [fontSize, setFontSize] = useState(18); // default font size
 
+  // Stati per le scene multi-fonte (Preparation)
+  const [activeSource, setActiveSource] = useState('luke');
+
+  // Gestione dinamica setActiveSource al cambio schema
+  React.useEffect(() => {
+    if (scene?.sources) {
+      const keys = Object.keys(scene.sources);
+      if (keys.length > 0 && !keys.includes(activeSource)) {
+        setActiveSource(keys[0]);
+      }
+    }
+  }, [scene, activeSource]);
+
   // Stati per AI Text Selection
   const [selectedText, setSelectedText] = useState("");
   const [selectionPos, setSelectionPos] = useState(null);
@@ -56,9 +69,16 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
     } else {
       window.speechSynthesis.cancel(); // safety cancel first
       
-      const textToRead = scene?.verses?.map(v => 
-        typeof v.text === 'string' ? v.text : (v.text[language] || v.text['it'])
-      ).join(" ");
+      let textToRead = '';
+      if (scene?.sources && scene.sources[activeSource]) {
+        textToRead = scene.sources[activeSource].verses?.map(v => 
+          typeof v.text === 'string' ? v.text : (v.text[language] || v.text['it'])
+        ).join(" ");
+      } else {
+        textToRead = scene?.verses?.map(v => 
+          typeof v.text === 'string' ? v.text : (v.text[language] || v.text['it'])
+        ).join(" ");
+      }
       if (!textToRead) return;
 
       const utterance = new SpeechSynthesisUtterance(textToRead);
@@ -220,13 +240,39 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
       {/* Blocco Inferiore (Scorrevole): Testo letture */}
       <div className="flex-grow overflow-y-auto min-h-0 h-full w-full custom-scrollbar px-6 pt-8 pb-24 sm:px-10 sm:pt-10 relative">
         
+        {/* Generazione Tabs dei Vangeli (solo se la scena ha fonti alternative) */}
+        {scene?.sources && Object.keys(scene.sources).length > 1 && (
+          <div className="flex justify-center flex-wrap gap-2 mb-8">
+            {Object.entries(scene.sources).map(([key, source]) => (
+              <button
+                key={key}
+                onClick={() => setActiveSource(key)}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-sm ${
+                  activeSource === key
+                    ? 'bg-blue-600 text-white shadow-md transform scale-105'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
+                }`}
+              >
+                {source.label[language] || source.label['it']}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-2">
-            {language === 'it' ? 'Vangelo di Luca' : 'Gospel of Luke'}
+            {scene?.sources && activeSource && scene.sources[activeSource]
+              ? (scene.sources[activeSource].label[language] || scene.sources[activeSource].label['it'])
+              : (language === 'it' ? 'Vangelo di Luca' : 'Gospel of Luke')}
           </h1>
           <h2 className="text-xl sm:text-2xl font-serif text-gray-600 dark:text-gray-400 mt-2 font-medium italic">
             {scene.sectionTitle?.[language] || scene.sectionTitle?.['it'] || scene.sectionTitle}
           </h2>
+          {scene?.sources && activeSource && scene.sources[activeSource] && (
+            <div className="text-md sm:text-lg font-serif text-blue-600/80 dark:text-blue-400/80 mt-3 font-semibold">
+              {scene.sources[activeSource].ref}
+            </div>
+          )}
         </div>
 
         <div 
@@ -234,30 +280,57 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
           onMouseUp={handleMouseUp}
           onMouseDown={handleMouseDown}
         >
+          {/* Animazione di transizione fluida usando chiave dinamica */}
           <div 
-            className="font-serif leading-loose text-justify relative group"
+            key={scene?.id + (activeSource || '')} 
+            className="font-serif leading-loose text-justify relative group animate-in fade-in duration-500"
             style={{ fontSize: `${fontSize}px` }}
           >
-            {scene.verses && scene.verses.map((verse, index) => {
-              const textContent = typeof verse.text === 'string' ? verse.text : (verse.text[language] || verse.text['it']);
-              return (
-                <React.Fragment key={verse.number}>
-                  {scene.isChapterStart && index === 0 && (
-                    <span className="float-left text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mr-4 mt-2 mb-2 leading-none selection:bg-transparent">
-                      {scene.chapter}
+            {scene?.verses ? (
+              scene.verses.map((verse, index) => {
+                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text[language] || verse.text['it']);
+                return (
+                  <React.Fragment key={verse.number}>
+                    {scene.isChapterStart && index === 0 && (
+                      <span className="float-left text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mr-4 mt-2 mb-2 leading-none selection:bg-transparent">
+                        {scene.chapter}
+                      </span>
+                    )}
+                    <span>
+                      <sup className="text-gray-400 dark:text-gray-500 font-sans text-xs mr-1 font-semibold select-none">
+                        {verse.number}
+                      </sup>
                     </span>
-                  )}
-                  <span>
-                    <sup className="text-gray-400 dark:text-gray-500 font-sans text-xs mr-1 font-semibold select-none">
-                      {verse.number}
-                    </sup>
-                  </span>
-                  <span>
-                    {renderVerseText(textContent)}{' '}
-                  </span>
-                </React.Fragment>
-              );
-            })}
+                    <span>
+                      {renderVerseText(textContent)}{' '}
+                    </span>
+                  </React.Fragment>
+                );
+              })
+            ) : scene?.sources && activeSource && scene.sources[activeSource] && scene.sources[activeSource].verses ? (
+              scene.sources[activeSource].verses.map((verse, index) => {
+                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text[language] || verse.text['it']);
+                // Extract chapter number from the reference (e.g., "1:1-4" -> "1")
+                const chapterNum = scene.sources[activeSource].ref.split(':')[0];
+                return (
+                  <React.Fragment key={verse.number}>
+                    {verse.isChapterStart && (
+                      <span className="float-left text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mr-4 mt-2 mb-2 leading-none selection:bg-transparent">
+                        {chapterNum}
+                      </span>
+                    )}
+                    <span>
+                      <sup className="text-gray-400 dark:text-gray-500 font-sans text-xs mr-2 font-bold select-none">
+                        {verse.number}
+                      </sup>
+                    </span>
+                    <span>
+                      {renderVerseText(textContent)}{' '}
+                    </span>
+                  </React.Fragment>
+                );
+              })
+            ) : null}
           </div>
         </div>
       </div>

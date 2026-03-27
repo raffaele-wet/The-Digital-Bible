@@ -1,9 +1,12 @@
 import React from 'react';
 import { ArrowLeft, BookOpen } from 'lucide-react';
-import { nativityInsights as insightsData } from '../content/nativity/insights';
+import { nativityInsights } from '../content/nativity/insights';
+import preparationInsights from '../content/preparation/insights';
+
+const allInsights = { ...nativityInsights, ...preparationInsights };
 
 const InsightPanel = ({ insightId, onClose, language = 'it' }) => {
-  const insight = insightsData[insightId];
+  const insight = allInsights[insightId];
 
   if (!insight) {
     return (
