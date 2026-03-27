@@ -4,7 +4,7 @@ import InteractiveWord from './InteractiveWord';
 import ChatPopup from './ChatPopup';
 import InsightLink from './InsightLink';
 
-const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick }) => {
+const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, onNavigateToScene }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [fontSize, setFontSize] = useState(18); // default font size
 
@@ -99,17 +99,56 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
 
   if (!scene) return null;
 
+  // If this scene is a Menu, render a grid of visual sub-scene links
+  if (scene?.type === 'menu') {
+    return (
+      <div className="max-w-4xl w-full mx-auto flex flex-col h-full bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700/50 p-6 md:p-10 overflow-y-auto custom-scrollbar animate-in fade-in duration-500">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight">
+            {scene.sectionTitle?.[language] || scene.sectionTitle?.['it'] || scene.sectionTitle}
+          </h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 font-serif max-w-2xl mx-auto italic">
+            {scene.description?.[language] || scene.description?.['it']}
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {scene.subScenes?.map((sub) => (
+            <button
+              key={sub.id}
+              onClick={() => onNavigateToScene && onNavigateToScene(sub.id)}
+              className="group relative flex flex-col items-center justify-end overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 aspect-[4/5] focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+            >
+              <img 
+                src={sub.image} 
+                alt={sub.title?.[language] || sub.title?.['it']} 
+                className="absolute inset-0 w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
+                draggable="false"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+              <div className="relative z-10 p-6 w-full text-center">
+                <h3 className="text-xl font-serif font-bold text-white mb-2 group-hover:text-orange-300 transition-colors drop-shadow-md">
+                  {sub.title?.[language] || sub.title?.['it']}
+                </h3>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   // Funzione per renderizzare il testo convertendo le parole del glossario in componenti InteractiveWord
   const renderTextWithGlossary = (text, parentIndex = 0) => {
     if (!text || !glossary || glossary.length === 0) return text;
 
     const wordMap = new Map();
     glossary.forEach(item => {
-      const keys = item.keywords[language] || item.keywords['it'] || [];
-      keys.forEach(k => {
+      const keywords = item.keywords?.[language] || item.keywords?.['it'] || [];
+      keywords.forEach(k => {
         wordMap.set(k.toLowerCase(), {
-          term: item.term[language] || item.term['it'],
-          description: item.description[language] || item.description['it']
+          term: item.term?.[language] || item.term?.['it'],
+          description: item.description?.[language] || item.description?.['it']
         });
       });
     });
@@ -253,7 +292,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
                 }`}
               >
-                {source.label[language] || source.label['it']}
+                {source.label?.[language] || source.label?.['it']}
               </button>
             ))}
           </div>
@@ -262,7 +301,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
         <div className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-2">
             {scene?.sources && activeSource && scene.sources[activeSource]
-              ? (scene.sources[activeSource].label[language] || scene.sources[activeSource].label['it'])
+              ? (scene.sources[activeSource].label?.[language] || scene.sources[activeSource].label?.['it'])
               : (language === 'it' ? 'Vangelo di Luca' : 'Gospel of Luke')}
           </h1>
           <h2 className="text-xl sm:text-2xl font-serif text-gray-600 dark:text-gray-400 mt-2 font-medium italic">
@@ -288,12 +327,12 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
           >
             {scene?.verses ? (
               scene.verses.map((verse, index) => {
-                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text[language] || verse.text['it']);
+                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text?.[language] || verse.text?.['it']);
                 return (
                   <React.Fragment key={verse.number}>
                     {scene.isChapterStart && index === 0 && (
                       <span className="float-left text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mr-4 mt-2 mb-2 leading-none selection:bg-transparent">
-                        {scene.chapter}
+                        {String(scene.chapter).match(/\d+$/)?.[0] || scene.chapter}
                       </span>
                     )}
                     <span>
@@ -309,14 +348,17 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick })
               })
             ) : scene?.sources && activeSource && scene.sources[activeSource] && scene.sources[activeSource].verses ? (
               scene.sources[activeSource].verses.map((verse, index) => {
-                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text[language] || verse.text['it']);
-                // Extract chapter number from the reference (e.g., "1:1-4" -> "1")
-                const chapterNum = scene.sources[activeSource].ref.split(':')[0];
+                const textContent = typeof verse.text === 'string' ? verse.text : (verse.text?.[language] || verse.text?.['it']);
+                // Extract only the chapter number digits from the reference (e.g., "Giovanni 2:1-11" -> "2")
+                const refHeader = scene.sources[activeSource].ref.split(':')[0];
+                const chapterMatch = refHeader.match(/\d+$/);
+                const chapterDisplay = chapterMatch ? chapterMatch[0] : refHeader;
+                
                 return (
                   <React.Fragment key={verse.number}>
                     {verse.isChapterStart && (
                       <span className="float-left text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mr-4 mt-2 mb-2 leading-none selection:bg-transparent">
-                        {chapterNum}
+                        {chapterDisplay}
                       </span>
                     )}
                     <span>

@@ -45,6 +45,26 @@ function App() {
     setActiveInsight(null);
   };
 
+  // Calcolo degli indici per le scene principali
+  const getNextMainSceneIndex = () => {
+    let nextIdx = currentSceneIndex + 1;
+    while (nextIdx < currentSectionData.length && currentSectionData[nextIdx].isSubScene) {
+      nextIdx++;
+    }
+    return nextIdx < currentSectionData.length ? nextIdx : -1;
+  };
+
+  const getPrevMainSceneIndex = () => {
+    let prevIdx = currentSceneIndex - 1;
+    while (prevIdx >= 0 && currentSectionData[prevIdx].isSubScene) {
+      prevIdx--;
+    }
+    return prevIdx >= 0 ? prevIdx : -1;
+  };
+
+  const nextSceneIdx = getNextMainSceneIndex();
+  const prevSceneIdx = getPrevMainSceneIndex();
+
   // Se siamo sulla home screen a pieno schermo
   if (currentView === 'home') {
     return (
@@ -78,10 +98,10 @@ function App() {
         
         {/* Frecce Laterali (assolute rispetto al main container)*/}
         <NavigationArrows 
-          onNext={() => setCurrentSceneIndex(prev => prev + 1)}
-          onPrev={() => setCurrentSceneIndex(prev => prev - 1)}
-          isFirst={currentSceneIndex === 0}
-          isLast={currentSceneIndex === currentSectionData.length - 1 || currentSectionData.length === 0}
+          onNext={() => { if (nextSceneIdx !== -1) setCurrentSceneIndex(nextSceneIdx); }}
+          onPrev={() => { if (prevSceneIdx !== -1) setCurrentSceneIndex(prevSceneIdx); }}
+          isFirst={prevSceneIdx === -1}
+          isLast={nextSceneIdx === -1}
         />
 
         {/* 3 Colonne Principali o Layout Deep Insight */}
@@ -104,6 +124,10 @@ function App() {
               glossary={glossary} 
               language={language}
               onInsightClick={(id) => setActiveInsight(id)}
+              onNavigateToScene={(sceneId) => {
+                const idx = currentSectionData.findIndex(s => s.id === sceneId);
+                if (idx !== -1) setCurrentSceneIndex(idx);
+              }}
             />
           </div>
 
