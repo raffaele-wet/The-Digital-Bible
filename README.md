@@ -23,8 +23,6 @@ A modern, immersive, and interactive React web application designed to explore s
 | :---: | :---: |
 | ![AI Analysis](public/screenshots/ai_analysis.png) | ![Deep Insight](public/screenshots/deep_insight.png) |
 
-### 🎥 Project Demo
-[Watch the interactive session demo](public/screenshots/demo.webp)
 
 ## 📖 How to Use
 
@@ -59,7 +57,7 @@ For a personalized study of any verse or phrase:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/raffaele-wet/Progetto_Bibbia.git
+   git clone https://github.com/raffaele-wet/The-Digital_Bible.git
    cd Progetto_Bibbia
    ```
 
