@@ -1,7 +1,8 @@
-import imgPrologue from '../../assets/images/prologue.png';
-import imgJohnBaptist from '../../assets/images/john_baptist.png';
-import imgBaptism from '../../assets/images/baptism.png';
-import imgTemptations from '../../assets/images/temptations.png';
+// Preparation section scene images
+import imgPrologue from '../../assets/images/preparation/prologue.png';
+import imgJohnBaptist from '../../assets/images/preparation/john_baptist.png';
+import imgBaptism from '../../assets/images/preparation/baptism.png';
+import imgTemptations from '../../assets/images/preparation/temptations.png';
 
 export const preparationData = [
   {

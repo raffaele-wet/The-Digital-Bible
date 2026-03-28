@@ -3,7 +3,7 @@ import { X, Send, User, Sparkles, Flame } from 'lucide-react';
 import { getGeminiResponse } from '../services/ai';
 import { marked } from 'marked';
 
-// Configura marked per andare a capo con i singoli invii
+// Configure marked to respect single line-breaks
 marked.setOptions({
   breaks: true,
   gfm: true
@@ -15,7 +15,7 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Funzione per ripulire e formattare il testo markdown
+  // Parse markdown text into safe HTML for rendering
   const renderMessageContent = (text) => {
     return { __html: marked.parse(text) };
   };
@@ -24,25 +24,19 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
     ? "Sei un esperto studioso della Bibbia. Il tuo compito è aiutare l'utente a comprendere il testo selezionato fornendo contesto storico, significato teologico e riferimenti ai termini originali (greco o ebraico). Sii conciso, rispettoso e profondo."
     : "You are an expert Bible scholar. Your task is to help the user understand the selected text by providing historical context, theological meaning, and references to original terms (Greek or Hebrew). Be concise, respectful, and profound.";
 
-  // Auto-scroll allo scroll del contenitore dei messaggi
+  // Auto-scroll to the latest message whenever the messages list or loading state changes
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
 
-  // Messaggio iniziale di analisi basato sul testo selezionato
+  // Send an initial greeting message based on the selected text
   useEffect(() => {
     if (selectedText) {
-      const greeting = language === 'it' 
+      const greeting = language === 'it'
         ? `Ho analizzato la parte selezionata: "${selectedText}". Cosa vorresti approfondire? Posso spiegarti il contesto storico, il significato teologico o i termini greci originali.`
         : `I have analyzed the selected part: "${selectedText}". What would you like to explore further? I can explain the historical context, theological meaning, or original Greek terms.`;
-        
-      setMessages([
-        {
-          id: 1,
-          sender: "ai",
-          text: greeting
-        }
-      ]);
+
+      setMessages([{ id: 1, sender: "ai", text: greeting }]);
     }
   }, [selectedText, language]);
 
@@ -50,27 +44,27 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    const newUserMsg = { id: Date.now(), sender: "user", text: inputValue };
-    setMessages(prev => [...prev, newUserMsg]);
+    const newUserMessage = { id: Date.now(), sender: "user", text: inputValue };
+    setMessages(prev => [...prev, newUserMessage]);
     setInputValue("");
     setIsLoading(true);
 
     try {
-      const prompt = `Il testo selezionato è: "${selectedText}". La domanda dell'utente è: "${inputValue}"`;
+      const prompt = `The selected text is: "${selectedText}". The user's question is: "${inputValue}"`;
       const response = await getGeminiResponse(prompt, systemInstruction);
-      
-      const newAiMsg = {
+
+      const newAiMessage = {
         id: Date.now() + 1,
         sender: "ai",
         text: response
       };
-      setMessages(prev => [...prev, newAiMsg]);
+      setMessages(prev => [...prev, newAiMessage]);
     } catch (error) {
-      console.error("Chat Error:", error);
+      console.error("Chat error:", error);
       const errorMessage = language === 'it'
         ? `Errore di connessione: ${error.message || 'Errore sconosciuto'}. Verifica la tua API Key in .env.local.`
         : `Connection error: ${error.message || 'Unknown error'}. Please check your API Key in .env.local.`;
-      
+
       setMessages(prev => [...prev, {
         id: Date.now() + 1,
         sender: "ai",
@@ -81,13 +75,14 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
     }
   };
 
-  const truncatedTitle = selectedText?.length > 40 
-    ? selectedText.substring(0, 40) + '...' 
+  // Truncate the selected text for display in the header
+  const truncatedTitle = selectedText?.length > 40
+    ? selectedText.substring(0, 40) + '...'
     : selectedText;
 
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center sm:items-end sm:justify-end sm:p-6 backdrop-blur-sm bg-black/40 pointer-events-auto transition-all" onClick={onClose}>
-      <div 
+      <div
         className="w-full sm:w-[450px] sm:max-w-[90vw] h-[90vh] sm:h-[600px] bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl border border-white/40 dark:border-gray-700/60 rounded-t-3xl sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-300 pointer-events-auto"
         onClick={(e) => e.stopPropagation()}
       >
@@ -120,7 +115,7 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
                   {msg.sender === 'user' ? <User className="w-3.5 h-3.5" /> : <Flame className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />}
                 </div>
                 <div className={`px-4 py-3 rounded-2xl ${msg.sender === 'user' ? 'bg-blue-600 text-white rounded-tr-sm shadow-md' : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-tl-sm border border-gray-100 dark:border-gray-700 shadow-sm'}`}>
-                  <div 
+                  <div
                     className={`text-[15px] md:text-base leading-relaxed font-sans
                       ${msg.sender === 'user' ? 'text-white' : 'text-gray-800 dark:text-gray-200'}
                       [&_strong]:font-bold [&_b]:font-bold [&_ul]:list-disc [&_ul]:ml-4 [&_ul]:my-2 [&_ol]:list-decimal [&_ol]:ml-4 [&_ol]:my-2 [&_li]:mt-1 [&_p]:mb-2 last:[&_p]:mb-0
@@ -151,11 +146,11 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
         {/* Input */}
         <div className="shrink-0 p-4 border-t border-gray-200/50 dark:border-gray-800/50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md">
           <form onSubmit={handleSendMessage} className="relative flex items-center">
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder={language === 'it' ? "Chiedi spiegazioni..." : "Ask explanations..."} 
+              placeholder={language === 'it' ? "Chiedi spiegazioni..." : "Ask explanations..."}
               className="w-full pl-5 pr-14 py-3.5 rounded-full bg-gray-100/80 dark:bg-gray-800/80 border border-t-white/50 border-gray-300/30 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-gray-100 placeholder-gray-500 font-sans outline-none transition-all shadow-inner text-[15px]"
             />
             <button type="submit" disabled={isLoading || !inputValue.trim()} className="absolute right-2.5 p-2 rounded-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:dark:bg-gray-600 text-white shadow-md">
@@ -164,7 +159,7 @@ const ChatPopup = ({ selectedText, onClose, language = 'it' }) => {
           </form>
           <div className="text-center mt-2">
             <span className="text-[10px] text-gray-400 dark:text-gray-500 font-sans uppercase tracking-widest font-semibold flex items-center justify-center space-x-1">
-              <span>AI Chat assistita</span>
+              <span>AI-assisted chat</span>
               <Sparkles className="w-3 h-3" />
             </span>
           </div>

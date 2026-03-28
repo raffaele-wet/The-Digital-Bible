@@ -1,354 +1,410 @@
 export const nativityInsights = {
+
+  // ─── INSIGHTS ESISTENTI (dati storici/esegetici) ────────────────────────────
+
   "1:1-4": {
-    title: {
-      it: "Teofilo",
-      en: "Theophilus"
-    },
+    title: { it: "Teofilo", en: "Theophilus" },
     content: {
       it: "Per informazioni sull'autore e sul destinatario, vd. introduzione a Luca.",
       en: "For information on the author and recipient, see the introduction to Luke."
     },
-    refs: {
-      it: "vd. introduzione a Luca",
-      en: "see introduction to Luke"
-    }
+    refs: { it: "vd. introduzione a Luca", en: "see introduction to Luke" }
   },
   "1:5": {
-    title: {
-      it: "Turno di Abiia ... discendente di Aaronne",
-      en: "Order of Abijah ... descendant of Aaron"
-    },
+    title: { it: "Turno di Abiia ... discendente di Aaronne", en: "Order of Abijah ... descendant of Aaron" },
     content: {
       it: "Sia Zaccaria, sia sua moglie provengono dalla discendenza di Aaronne (fratello di Mosè), attraverso cui il Signore ha stabilito il sacerdozio. Dal tempo del re Davide, tali sacerdoti sono organizzati in 24 classi e Abiia è uno dei \"capi della famiglia dei sacerdoti\" (Ne 12:12; 1Cr 24:10).",
       en: "Both Zechariah and his wife were from the priestly line of Aaron (Moses' brother), through whom the Lord established the priesthood. Since the time of King David, these priests had been organized into 24 divisions, and Abijah was one of the \"family heads of the priests\" (Nehemiah 12:12; 1 Chronicles 24:10)."
     },
-    refs: {
-      it: "Ne 12:12; 1Cr 24:10",
-      en: "Neh 12:12; 1Ch 24:10"
-    }
+    refs: { it: "Ne 12:12; 1Cr 24:10", en: "Neh 12:12; 1Ch 24:10" }
   },
   "1:15a": {
-    title: {
-      it: "Ripieno dello Spirito Santo",
-      en: "Filled with the Holy Spirit"
-    },
+    title: { it: "Pieno di Spirito Santo", en: "Filled with the Holy Spirit" },
     content: {
-      it: "Fin dalla nascita Giovanni è ripieno dello Spirito di Dio, che lo guida e lo ammaestra nel servizio. Sono, infatti, ben visibili i frutti della Sua opera nella vita e nel ministero di quest'uomo di Dio:\n\n- la predicazione di Giovanni spinse le persone a confessare i propri peccati e convertirsi al Signore (vv. 15-17; vd. nota Gv 16:8);\n- predicò con l'autorevolezza e lo spirito del profeta Elia (v. 17; vd. nota At 1:8);\n- favorì il ristabilimento delle giuste relazioni nelle famiglie e incoraggiò molti ad avvicinarsi a Dio (v. 17).",
-      en: "From birth John was filled with the Spirit of God, who guided and instructed him in ministry. The fruits of His work are clearly visible in the life and ministry of this man of God:\n\n- John's preaching moved people to confess their sins and turn to the Lord (vv. 15-17; see note John 16:8);\n- he preached with the authority and spirit of the prophet Elijah (v. 17; see note Acts 1:8);\n- he fostered the restoration of right relationships in families and encouraged many to draw near to God (v. 17)."
+      it: "Giovanni Battista sarà pieno di Spirito Santo fin dal grembo materno. Questa è una profezia straordinaria che preannuncia una missione unica.",
+      en: "John the Baptist will be filled with the Holy Spirit even before birth. This is an extraordinary prophecy foreshadowing a unique mission."
     },
-    refs: {
-      it: "vv. 15-17; vd. nota Gv 16:8 • v. 17; vd. nota At 1:8",
-      en: "vv. 15-17; see note John 16:8 • v. 17; see note Acts 1:8"
-    }
+    refs: { it: "Lc 1:41", en: "Luke 1:41" }
   },
   "1:15b": {
-    title: {
-      it: "Vino ... bevande alcoliche",
-      en: "Wine ... alcoholic drinks"
-    },
+    title: { it: "Non berrà vino né bevanda alcolica", en: "He must never drink wine or other intoxicating drinks" },
     content: {
-      it: "La traduzione letterale è: \"Non berrà vino (oinos) o bevanda forte (sikera)\". Il termine originale per \"bevanda forte\" è sikera. Che cosa identifichi esattamente non è stato definito, ma certamente è quanto di più vicino alla definizione dell'A.T. resa per \"shekar\" (vd. articoli Il Vino nell'Antico Testamento, pag. 1087, e Il Vino nel Nuovo Testamento, pag. 1888).",
-      en: "The literal translation says: \"He will drink neither wine (oinos) nor strong drink (sikera)\". The original term for \"strong drink\" is sikera. Exactly what it identifies has not been definitively determined, but it is certainly the closest equivalent to the O.T. definition rendered for \"shekar\" (see articles Wine in the Old Testament, p. 1087, and Wine in the New Testament, p. 1888)."
+      it: "Questa è la consacrazione del Nazireato (Nu 6:3), segno di una dedizione totale a Dio, già anticipata da Sansone e Samuele.",
+      en: "This is the consecration of the Nazirite vow (Num 6:3), a sign of total dedication to God, already anticipated in Samson and Samuel."
     },
-    refs: {
-      it: "vd. articoli Il Vino nell'Antico Testamento, pag. 1087, e Il Vino nel Nuovo Testamento, pag. 1888",
-      en: "see articles Wine in the Old Testament, p. 1087, and Wine in the New Testament, p. 1888"
-    }
+    refs: { it: "Nu 6:3 • Gdc 13:4-5 • 1Sam 1:11", en: "Num 6:3 • Judg 13:4-5 • 1 Sam 1:11" }
   },
-  "1:17a": {
-    title: {
-      it: "Con lo spirito e con la potenza di Elia",
-      en: "With the spirit and power of Elijah"
-    },
+  "1:17": {
+    title: { it: "Lo spirito e la potenza di Elia", en: "The spirit and power of Elijah" },
     content: {
-      it: "Per molti versi Giovanni somiglia a Elia, il coraggioso profeta dell'A.T. (vd. nota Ml 4:5). È ripieno dello Spirito Santo (v. 15) e la sua predicazione si basa sulla rivelazione di ciò che moralmente e spiritualmente è giusto nel rapporto con Dio (3:7-14; Mt 3:1-10). Giovanni esorta al ravvedimento per stabilire una corretta relazione con il Signore (v. 16), perciò predica contro il peccato, parla della giustizia e cita il giudizio (vd. nota Gv 16:8). Nel suo ministero, Giovanni volgerà il cuore dei ribelli alla saggezza della giustizia (vd. nota Mt 11:7). Non desisterà dal fare quanto è giusto per amore della sua posizione sociale, della popolarità o sicurezza, bensì si sottoporrà ai principi della Parola di Dio (3:19, 20; Mt 14:1-11) e ubbidirà mantenendosi fedele alla verità. Quanto detto dimostra con certezza che Giovanni sarebbe stato \"un uomo di Dio\", un degno esempio del carattere, della potenza e dei propositi del Signore.",
-      en: "In many ways John resembled Elijah, the courageous prophet of the O.T. (see note Mal 4:5). He was filled with the Holy Spirit (v. 15) and his preaching was based on the revelation of what is morally and spiritually right in relationship with God (Luke 3:7-14; Matt 3:1-10). John exhorted repentance to establish a right relationship with the Lord (v. 16), thus he preached against sin, spoke of righteousness and cited judgment (see note John 16:8). In his ministry, John turned the heart of the rebellious to the wisdom of righteousness (see note Matt 11:7). He did not cease doing what is right out of love for his social standing, popularity or security; rather he submitted to the principles of God's Word (Luke 3:19, 20; Matt 14:1-11) and obeyed, remaining faithful to the truth. All this certainly demonstrates that John was \"a man of God\", a worthy example of the character, power and purposes of the Lord."
+      it: "Malachia 4:5-6 profetizzava il ritorno del profeta Elia prima del 'grande e terribile giorno del Signore'. Gesù stesso identificherà Giovanni Battista come l'adempimento di questa profezia (Mt 17:12).",
+      en: "Malachi 4:5-6 prophesied the return of the prophet Elijah before the 'great and terrible day of the Lord'. Jesus himself will identify John the Baptist as the fulfillment of this prophecy (Matt 17:12)."
     },
-    refs: {
-      it: "vd. nota Ml 4:5 • Lc 3:7-14; Mt 3:1-10 • vd. nota Gv 16:8 • vd. nota Mt 11:7 • Lc 3:19, 20; Mt 14:1-11",
-      en: "see note Mal 4:5 • Luke 3:7-14; Matt 3:1-10 • see note John 16:8 • see note Matt 11:7 • Luke 3:19, 20; Matt 14:1-11"
-    }
-  },
-  "1:17b": {
-    title: {
-      it: "Padri ai figli",
-      en: "Fathers to the children"
-    },
-    content: {
-      it: "Uno dei più gravi peccati del popolo di Dio nel corso della storia è ravvisabile nella mancanza d'amore paterno nei confronti della propria discendenza, tale da compromettere l'insegnamento delle vie e dei comandamenti del Signore (Ml 4:6). L'avvento di Giovanni e del messaggio di Cristo fornisce una nuova occasione d'ispirazione per volgere lo sguardo verso un cammino che onori Dio e adempia la Sua volontà:\n\nQuesto conferma che uno degli obiettivi dell'Evangelo è ristabilire i propositi del Signore per le famiglie e, in particolare, per un giusto rapporto tra padri e figli. Qualora questa relazione s'interrompesse o fosse carente, i nuclei familiari si troverebbero in gravi difficoltà relazionali e funzionali. Giovanni intende esortare le persone a ritornare umilmente a Dio per permettergli di esercitare il Suo controllo nel corso della loro vita. Egli, inoltre, intende sollecitare i padri a riconquistare i figli, spronandoli a ricercare un giusto rapporto con il Signore.\n\nSe la chiesa è deficitaria nel rispecchiare i piani di Dio per essa, è possibile che un motivo possa essere proprio la scarsa sensibilità al legame affettivo nella famiglia. Questo, in particolare, pensando ai padri che abbandonano i propri figli: fisicamente, emotivamente o spiritualmente. Quand'anche non ci fossero abbandono o disaffezione, i genitori mostrerebbero un'evidente mancanza di amore, qualora non dedicassero del tempo insegnando loro i principi della Parola di Dio.",
-      en: "One of the most grievous sins of God's people throughout history has been the lack of paternal love toward their offspring, so as to compromise the teaching of the ways and commandments of the Lord (Mal 4:6). The coming of John and the message of Christ provided a new occasion of inspiration to turn an eye toward a path that honors God and fulfills His will:\n\nThis confirms that one of the goals of the Gospel is to restore the Lord's purposes for families, and in particular, for a proper relationship between fathers and children. Should this relationship be severed or lacking, households would find themselves in severe relational and functional difficulties. John intended to exhort people to turn humbly back to God to allow Him to exercise His control over their lives. Furthermore, he intended to urge fathers to win back their children, encouraging them to seek a right relationship with the Lord.\n\nIf the church is deficient in reflecting God's plans for it, it is possible that one reason could be the lack of sensitivity to affective bonds in the family. This is particularly thinking of fathers who abandon their children: physically, emotionally or spiritually. Even when there is no overt abandonment or disaffection, parents would still show an obvious lack of love if they failed to spend time teaching them the principles of God's Word."
-    },
-    refs: {
-      it: "Ml 4:6",
-      en: "Mal 4:6"
-    }
-  },
-  "1:27": {
-    title: {
-      it: "Fidanzata a un uomo",
-      en: "Engaged to a man"
-    },
-    content: {
-      it: "Questa traduzione deriva dal gr. emnestéumenen (fidanzata). Nella cultura ebraica il fidanzamento è un accordo legale che precede il matrimonio (molto più vincolante di un semplice \"impegno\") ed è un legame pari al nostro attuale matrimonio. L'astinenza sessuale è d'obbligo per entrambe le parti, prima e durante il fidanzamento. Un'eventuale infedeltà durante questo periodo è considerata pari all'adulterio e perciò punibile con la morte secondo la legge data agli Ebrei per mezzo di Mosè (De 22:23, 24). Proprio per questo, durante la gestazione di Maria, Giuseppe, da uomo fedele e giusto, si propose di lasciarla in segreto (Mt 1:18-21), ma dopo la rivelazione del Signore in sogno sulla natura della gravidanza, la prese con sé come moglie (Mt 1:24), senza però intrattenere con lei rapporti coniugali, se non dopo la nascita di Gesù (1:25).",
-      en: "This translation derives from the gr. emnestéumenen (engaged/betrothed). In Jewish culture, engagement was a legal agreement that preceded marriage (much more binding than a simple \"commitment\") and was a bond equal to our current marriage. Sexual abstinence was mandatory for both parties, before and during the engagement. Eventual infidelity during this period was considered equal to adultery and therefore punishable by death according to the law given to the Hebrews through Moses (Deut 22:23, 24). Precisely for this reason, during Mary's pregnancy, Joseph, being a faithful and just man, resolved to divorce her quietly (Matt 1:18-21), but after the Lord's revelation in a dream about the nature of the pregnancy, he took her as his wife (Matt 1:24), but did not have marital relations with her until after the birth of Jesus (Luke 1:25)."
-    },
-    refs: {
-      it: "De 22:23, 24 • Mt 1:18-21 • Mt 1:24 • Lc 1:25",
-      en: "Deut 22:23, 24 • Matt 1:18-21 • Matt 1:24 • Luke 1:25"
-    }
-  },
-  "1:28": {
-    title: {
-      it: "Favorita dalla grazia",
-      en: "Favored with grace"
-    },
-    content: {
-      it: "Certamente Maria fu prescelta per essere madre di Gesù, ma gli scrittori del N.T. non l'hanno mai presentata come degna di adorazione per la sua posizione, né hanno mai lasciato intendere che le si dovesse tributare un culto d'intercessione o l'attribuzione di titoli e onori speciali:\n\nMaria è stata scelta soltanto perché ha trovato grazia presso il Signore (cfr. Ge 6:8). La sua vita umile e devota è stata apprezzata da Dio in vista di questo importante compito (cfr. 2Ti 2:21).\n\nQuesta meravigliosa benedizione, però, non le ha recato soltanto gioia, bensì anche grande dolore (2:35) perché suo Figlio nella carne, oltre che spirito, è stato trafitto senza colpa alcuna. L'essere chiamati dal Signore a una missione specifica comporta spesso, insieme alle benedizioni, anche l'amaro sapore della sofferenza. È possibile, infatti, gustare gioia e tristezza, riscuotere successi e soffrire ingiustizie.",
-      en: "Certainly Mary was chosen to be the mother of Jesus, but the N.T. writers never presented her as worthy of worship for her position, nor did they ever suggest that she should receive intercessory devotion or the attribution of special titles and honors:\n\nMary was chosen entirely because she found favor with the Lord (cf. Gen 6:8). Her humble and devout life was appreciated by God in view of this immense task (cf. 2 Tim 2:21).\n\nThis wonderful blessing, however, did not solely bring her joy, but also profound sorrow (Luke 2:35) because her Son in the flesh, and in spirit, was pierced without any guilt. Being called by the Lord to a specific mission often entails, alongside the blessings, the bitter taste of suffering. It is possible, in fact, to taste both joy and sadness, to achieve success and suffer injustices."
-    },
-    refs: {
-      it: "Ge 6:8 • 2Ti 2:21 • Lc 2:35",
-      en: "Gen 6:8 • 2 Tim 2:21 • Luke 2:35"
-    }
+    refs: { it: "Ml 4:5-6 • Mt 17:12", en: "Mal 4:5-6 • Matt 17:12" }
   },
   "1:32": {
-    title: {
-      it: "Davide suo padre",
-      en: "David his father"
-    },
+    title: { it: "Il trono di Davide suo padre", en: "The throne of his ancestor David" },
     content: {
-      it: "Era stato da lungo tempo promesso e predetto che il Messia (l'Unto, l'Eletto, il Salvatore, il Cristo) sarebbe stato \"figlio\" e discendente del re Davide (v. 69; cfr. Gr 23:5; vd. nota Mt 1:1-16; vd. articolo Il Patto di Dio con Davide, pag. 529, e schema Le Profezie dell'Antico Testamento Adempiute in Cristo, pag. 1045).",
-      en: "It had long been promised and foretold that the Messiah (the Anointed One, the Chosen One, the Savior, the Christ) would be the \"son\" and descendant of King David (v. 69; cf. Jer 23:5; see note Matt 1:1-16; see article God's Covenant with David, p. 529, and chart Old Testament Prophecies Fulfilled in Christ, p. 1045)."
+      it: "Il patto davidico (2Sam 7:12-16) prometteva un discendente sul trono eterno. Gesù è l'adempimento definitivo: il Figlio di Davide che regna per sempre.",
+      en: "The Davidic covenant (2 Sam 7:12-16) promised a descendant on an eternal throne. Jesus is the ultimate fulfillment: the Son of David who reigns forever."
     },
-    refs: {
-      it: "Lc 1:69 • Gr 23:5 • vd. nota Mt 1:1-16 • Il Patto di Dio con Davide, pag. 529 • Le Profezie dell'Antico Testamento Adempiute in Cristo, pag. 1045",
-      en: "Luke 1:69 • Jer 23:5 • see note Matt 1:1-16 • God's Covenant with David, p. 529 • Old Testament Prophecies Fulfilled in Christ, p. 1045"
-    }
+    refs: { it: "2Sam 7:12-16 • Sal 89:3-4", en: "2 Sam 7:12-16 • Ps 89:3-4" }
   },
-  "1:35": {
-    title: {
-      it: "Santo",
-      en: "Holy"
-    },
+  "1:37": {
+    title: { it: "Nessuna parola di Dio rimarrà inefficace", en: "Nothing is impossible with God" },
     content: {
-      it: "Sia Luca sia Matteo attestano chiaramente e in maniera inequivocabile che Gesù è nato da una vergine (v. 27; vd. nota Mt 1:18, 23). Lo Spirito Santo ha operato un miracolo nel corpo di Maria e il Figlio è stato concepito soltanto per l'intervento soprannaturale di Dio. Come conseguenza Gesù è \"Santo\" (puro, perfetto, spiritualmente completo e interamente dedicato all'opera del Padre). Ciò significa che Egli è venuto al mondo senza una natura corrotta e macchiata dal peccato, spiritualmente libero dalla corruzione e consacrato al volere del Padre.",
-      en: "Both Luke and Matthew clearly and unequivocally attest that Jesus was born of a virgin (v. 27; see note Matt 1:18, 23). The Holy Spirit worked a miracle in Mary's body and the Son was conceived solely by the supernatural intervention of God. As a consequence, Jesus is \"Holy\" (pure, perfect, spiritually complete and entirely dedicated to the Father's work). This means that He came into the world without a nature corrupted and stained by sin, spiritually free from corruption and consecrated to the Father's will."
+      it: "Questa promessa riecheggia quella fatta ad Abraamo quando annunciò la nascita di Isacco a Sara, anziana e sterile (Gen 18:14). Dio è il Dio dell'impossibile.",
+      en: "This promise echoes the one made to Abraham when he announced the birth of Isaac to elderly, barren Sarah (Gen 18:14). God is the God of the impossible."
     },
-    refs: {
-      it: "Lc 1:27 • vd. nota Mt 1:18, 23",
-      en: "Luke 1:27 • see note Matt 1:18, 23"
-    }
+    refs: { it: "Gen 18:14 • Ger 32:17", en: "Gen 18:14 • Jer 32:17" }
   },
-  "1:38": {
-    title: {
-      it: "Secondo la tua parola",
-      en: "According to your word"
-    },
+  "1:46-55": {
+    title: { it: "Il Magnificat", en: "The Magnificat" },
     content: {
-      it: "Maria è completamente sottomessa alla volontà di Dio e ha piena fiducia nella Sua parola. Ha accettato volontariamente l'onore di essere la madre di Gesù, ma al tempo stesso anche l'onere delle critiche che la sua condizione avrebbe comportato. È scontato che tale riprovazione le sarebbe derivata dal fatto che il suo corpo avrebbe mostrato i segni della gravidanza prima del matrimonio (2:5; Mt 1:18, 19) dovuta all'opera dello Spirito Santo. Maria è il massimo esempio cui le giovani cristiane devono tendere per quanto riguarda la castità, l'amore per il Signore, la fede nella Sua Parola e la propensione a ubbidire allo Spirito Santo, qualunque richiesta Egli faccia.",
-      en: "Mary is completely submissive to the will of God and has full trust in His word. She willingly accepted the honor of being the mother of Jesus, but at the same time also the burden of the criticism her condition would entail. It was obvious that such condemnation would arise from the fact that her body would show signs of pregnancy before marriage (Luke 2:5; Matt 1:18, 19) due to the work of the Holy Spirit. Mary is the ultimate example to which young Christian women should aspire regarding chastity, love for the Lord, faith in His Word and the willingness to obey the Holy Spirit, whatever He may ask."
+      it: "Il cantico di Maria è profondamente radicato nella preghiera di Anna (1Sam 2:1-10). Maria, come Anna, celebra un Dio che abbassa i potenti e innalza gli umili. Il 'Magnificat' è la summa della teologia della grazia: Dio sceglie la debolezza per manifestare la Sua gloria.",
+      en: "Mary's canticle is deeply rooted in Hannah's prayer (1 Sam 2:1-10). Mary, like Hannah, celebrates a God who brings down the powerful and lifts up the humble. The 'Magnificat' is the summit of the theology of grace: God chooses weakness to manifest His glory."
     },
-    refs: {
-      it: "Lc 2:5 • Mt 1:18, 19",
-      en: "Luke 2:5 • Matt 1:18, 19"
-    }
-  },
-  "1:47": {
-    title: {
-      it: "Dio, mio Salvatore",
-      en: "God, my Savior"
-    },
-    content: {
-      it: "Con queste parole Maria riconosce il proprio personale bisogno di salvezza spirituale. Come ogni essere vivente, anche lei è una peccatrice che ha bisogno del suo \"Salvatore\". L'idea che Maria sia stata concepita immacolata (libera dal peccato, che determina la separazione da Dio e che deturpa la natura di essere umano) e che abbia vissuto senza colpe non è riscontrabile in alcuna parte della Bibbia (cfr. Ro 3:9, 23). Il passo del \"cantico di Maria\" è uno dei quattro inni o canti di lode al Signore, riportati in Luca (vv. 68-79; 2:14, 29-32). Questo inno è noto come il \"Magnificat\" (dalla parola con cui inizia la traduzione vulgata latina), che significa \"magnifica, glorifica, esalta\".",
-      en: "With these words Mary recognizes her own personal need for spiritual salvation. Like every human being, she too is a sinner who needs her \"Savior\". The idea that Mary was conceived immaculate (free from sin, which causes separation from God and disfigures the nature of humanity) and lived without guilt is not supported anywhere in the Bible (cf. Rom 3:9, 23). The passage of \"Mary's song\" is one of four hymns or songs of praise to the Lord recorded in Luke (vv. 68-79; 2:14, 29-32). This hymn is known as the \"Magnificat\" (from the word with which the Latin Vulgate translation begins), which means \"magnify, glorify, exalt\"."
-    },
-    refs: {
-      it: "Ro 3:9, 23 • Lc 1:68-79; 2:14, 29-32",
-      en: "Rom 3:9, 23 • Luke 1:68-79; 2:14, 29-32"
-    }
-  },
-  "1:67": {
-    title: {
-      it: "Ripieno dello Spirito Santo",
-      en: "Filled with the Holy Spirit"
-    },
-    content: {
-      it: "Luca evidenzia il modo con cui lo Spirito Santo riempia di potenza molte delle persone coinvolte nella nascita di Gesù (vv. 15, 35, 41, 67; 2:25). Dopo l'ascensione di Cristo (il Suo ritorno in cielo), tutto ciò è alla portata di ogni Suo discepolo: essere riempiti di Spirito Santo (At 1, 2; vd. articoli Lo Spirito Santo nell'Antico Testamento, pag. 1507, Il Battesimo nello Spirito Santo, pag. 1964, e La Dottrina dello Spirito Santo, pag. 1985).",
-      en: "Luke highlights how the Holy Spirit empowered many of the people involved in the birth of Jesus (vv. 15, 35, 41, 67; Luke 2:25). After Christ's ascension (His return to heaven), all of this became available to every earthly disciple: to be filled with the Holy Spirit (Acts 1, 2; see articles The Holy Spirit in the Old Testament, p. 1507, The Baptism in the Holy Spirit, p. 1964, and The Doctrine of the Holy Spirit, p. 1985)."
-    },
-    refs: {
-      it: "Lc 1:15, 35, 41, 67; 2:25 • At 1, 2",
-      en: "Luke 1:15, 35, 41, 67; 2:25 • Acts 1, 2"
-    }
-  },
-  "1:75": {
-    title: {
-      it: "Santità e giustizia",
-      en: "Holiness and righteousness"
-    },
-    content: {
-      it: "Lo scopo della nostra redenzione (riscatto dal peccato per ristabilire la giusta comunione con Dio) consiste nell'essere sottratti al regno di Satana e liberati dal suo potere (At 26:18) per servire il Signore \"in santità e giustizia davanti a Lui tutti i giorni\" (cfr. Ef 1:4). Per i credenti la santità rappresenta la purezza e l'integrità morale, una spiritualità profonda, l'allontanamento dal male e la dedizione a Dio. Camminare con \"giustizia\" significa mantenere un'appropriata relazione con Lui, donandogli il posto che Gli compete. Il popolo di Dio deve, con il Suo aiuto, ricercare una vita di santità e giustizia in questo mondo corrotto; ecco perché la vita va vissuta \"dinanzi a Lui\" con una costante consapevolezza della Sua presenza.",
-      en: "The purpose of our redemption (rescue from sin to restore proper communion with God) consists in being delivered from Satan's dominion and freed from his power (Acts 26:18) to serve the Lord \"in holiness and righteousness before Him all our days\" (cf. Eph 1:4). For believers, holiness represents purity and moral integrity, a profound spirituality, departing from evil and dedicating oneself to God. Walking in \"righteousness\" means maintaining a proper relationship with Him, giving Him His rightful place. God's people must, with His help, seek a life of holiness and righteousness in this corrupt world; this is why life must be lived \"before Him\" with a constant awareness of His presence."
-    },
-    refs: {
-      it: "At 26:18 • Ef 1:4",
-      en: "Acts 26:18 • Eph 1:4"
-    }
-  },
-  "2:7": {
-    title: {
-      it: "In una mangiatoia",
-      en: "In a manger"
-    },
-    content: {
-      it: "Cristo è nato in una stalla, luogo di ricovero per gli animali, e la mangiatoia è dove si dispone il loro cibo. La nascita del Salvatore, l'Iddio incarnato (Gv 1:1, 14), il più grande evento della storia, avviene nel più umile dei luoghi. Gesù è il Re dei re (Ap 17:14; 19:16), ma non è nato in una reggia e non ha vissuto come tale secondo i modelli del mondo. Anche quanti appartengono al Signore sono discendenza regale, predicatori del regno di Dio e al Suo servizio (1P 2:5, 9; Ap 5:10), ma in questa vita sono chiamati a seguire il Suo esempio in umiltà e semplicità.",
-      en: "Christ was born in a stable, a sheltering place for animals, and the manger is where their food is placed. The birth of the Savior, the Incarnate God (John 1:1, 14), the greatest event in history, occurred in the humblest of places. Jesus is the King of kings (Rev 17:14; 19:16), but He was not born in a palace and did not live as such according to the world's standards. Those who belong to the Lord are also royal offspring, preachers of the kingdom of God and in His service (1 Pet 2:5, 9; Rev 5:10), but in this life they are called to follow His example in humility and simplicity."
-    },
-    refs: {
-      it: "Gv 1:1, 14 • Ap 17:14; 19:16 • 1P 2:5, 9 • Ap 5:10",
-      en: "John 1:1, 14 • Rev 17:14; 19:16 • 1 Pet 2:5, 9 • Rev 5:10"
-    }
+    refs: { it: "1Sam 2:1-10 • Sal 34:2-3", en: "1 Sam 2:1-10 • Ps 34:2-3" }
   },
   "2:11": {
-    title: {
-      it: "Un Salvatore ... Cristo, il Signore",
-      en: "A Savior ... Christ, the Lord"
-    },
+    title: { it: "Un Salvatore, che è Cristo il Signore", en: "The Savior—the Messiah, the Lord" },
     content: {
-      it: "Alla Sua nascita, Gesù è chiamato \"il Salvatore\":\n\nCome tale è venuto per redimerci dal peccato e dalla sua peggiore conseguenza: la morte spirituale con la conseguente separazione da Dio. Il risultato di questa missione ci permette di essere liberi dal potere di Satana, preservati dalla malvagia influenza del mondo, sollevati dal timore, vittoriosi sulla morte e scampati al giudizio finale per i nostri peccati (vd. nota Mt 1:21).\n\nIl Salvatore è anche \"Cristo il Signore\", l'unico degno di esercitare ogni autorità nella nostra vita. Egli è stato unto (appartato, mandato, ripieno di potenza) come Messia (il Salvatore) e Signore che governa con amore il Suo popolo (vd. nota Mt 1:1 sul nome di Cristo). Nessuno può ritenere Gesù come Salvatore senza sottomettersi pienamente alla Sua signoria: Egli è sia Colui che perdona sia il Signore della nostra vita.",
-      en: "At His birth, Jesus was called \"the Savior\":\n\nAs such, He came to redeem us from sin and its worst consequence: spiritual death and the resulting separation from God. The outcome of this mission allows us to be freed from satanic power, preserved from the evil influence of the world, relieved of fear, victorious over death, and saved from the final judgment for our sins (see note Matt 1:21).\n\nThe Savior is also \"Christ the Lord\", the only one worthy to exercise any authority in our lives. He was anointed (set apart, sent, filled with power) as the Messiah (the Savior) and Lord who lovingly governs His people (see note Matt 1:1 on the name of Christ). No one can embrace Jesus as Savior without fully submitting to His lordship: He is indeed both the One who forgives and the Lord of our lives."
+      it: "Tre titoli in un versetto: Salvatore (Soter), Cristo (Mashiach), Signore (Kyrios). In greco, 'Kyrios' era il termine usato per tradurre il nome divino YHWH nella Settanta. L'angelo proclama la piena divinità e la missione salvifica di Gesù in un unico respiro.",
+      en: "Three titles in one verse: Savior (Soter), Messiah (Christ), Lord (Kyrios). In Greek, 'Kyrios' was the term used to translate the divine name YHWH in the Septuagint. The angel proclaims the full divinity and saving mission of Jesus in a single breath."
     },
-    refs: {
-      it: "vd. nota Mt 1:21 • vd. nota Mt 1:1",
-      en: "see note Matt 1:21 • see note Matt 1:1"
-    }
-  },
-  "2:17": {
-    title: {
-      it: "Divulgarono ciò che era loro stato detto",
-      en: "They made known what had been told them"
-    },
-    content: {
-      it: "Venire a conoscenza della nascita di Gesù non è stato privilegio di reali o potenti, anzi, molto probabilmente tali persone si sarebbero preoccupate di ben altri aspetti. Gli intellettuali, infatti, avrebbero manifestato il loro scetticismo e le autorità, all'arrivo di Cristo, avrebbero temuto per la loro posizione (ad es. il re Erode in Mt 2:13). I pastori, invece, persone semplici, ricevettero il messaggio di Gesù con maggior entusiasmo, andando a verificare quanto udito. Così, dopo aver visto Gesù, divulgano la buona novella senza vergogna o esitazione.",
-      en: "Learning about the birth of Jesus was not the privilege of royalty or the powerful; in fact, it is highly likely such people would have been concerned with completely different matters. Intellectuals, for instance, would have demonstrated skepticism, and the authorities, upon Christ's arrival, would have feared for their position (e.g., King Herod in Matt 2:13). The shepherds, instead, simple people, received the message of Jesus with far more enthusiasm, immediately going to verify what they had heard. Thus, after seeing Jesus, they proclaimed the good news without any shame or hesitation."
-    },
-    refs: {
-      it: "Mt 2:13",
-      en: "Matt 2:13"
-    }
-  },
-  "2:22": {
-    title: {
-      it: "Presentarlo al Signore",
-      en: "Present Him to the Lord"
-    },
-    content: {
-      it: "Al pari di Giuseppe e Maria, che hanno portato Gesù al tempio per consacrarlo al Padre, i genitori dovrebbero affidare a Dio i propri figli con fiducia, impegnandosi a educarli in modo che imparino il timore e l'onore a Lui dovuti. La preghiera dovrebbe essere continua e sovrana per accompagnare ogni loro passo, affidandoli a Cristo affinché in futuro siano fedeli nell'onorarlo e nell'adempiere il piano che il Signore ha riservato loro.",
-      en: "Just as Joseph and Mary brought Jesus to the temple to dedicate Him to the Father, parents should entrust their children to God with faith, committing to raise them in such a way that they learn the fear and honor owed to Him. Prayer should be continuous and prevailing to accompany their every step, committing them to Christ so that in the future they will be faithful in honoring Him and fulfilling the plan that the Lord has in store for them."
-    }
-  },
-  "2:24": {
-    title: {
-      it: "Un paio di ... piccioni",
-      en: "A pair of ... pigeons"
-    },
-    content: {
-      it: "L'offerta di un paio di piccioni, riservata dalla legge mosaica ai più poveri, ci dimostra chiaramente lo stato di necessità in cui Giuseppe e Maria versano in quel frangente (le 12:8). Fin dall'inizio, Cristo si è identificato in una persona comune, senza alcun privilegio (9:58; Mt 8:20; vd. nota Ap 2:9).",
-      en: "The offering of a pair of pigeons, reserved by Mosaic law for the poorest, clearly demonstrates the state of financial hardship Joseph and Mary found themselves in at that time (Lev 12:8). From the very beginning, Christ identified Himself strictly as a common person, entirely devoid of earthly privilege (Luke 9:58; Matt 8:20; see note Rev 2:9)."
-    },
-    refs: {
-      it: "Le 12:8 • Lc 9:58; Mt 8:20 • vd. nota Ap 2:9",
-      en: "Lev 12:8 • Luke 9:58; Matt 8:20 • see note Rev 2:9"
-    }
-  },
-  "2:25a": {
-    title: {
-      it: "Giusto e timorato",
-      en: "Righteous and devout"
-    },
-    content: {
-      it: "\"Giusto\" o \"retto\" (cfr. Mt 8:20; vd. nota Ap 2:9), tale è la traduzione del vocabolo gr. dikaios (ebr. kasher), che significa \"onesto\". Nell'A.T. questo termine ha un significato più vasto e profondo, che si attiene ai comandamenti: identifica una persona che si pone nella giusta relazione con Dio, sia con il cuore sia con le azioni (vd. note Lc 1:75 e 32:2).\n\nLa giustizia che il Signore desidera nella vita del Suo popolo consiste in una condizione spirituale basata sulla fede, sull'amore e sul rispetto rituale in cui la predisposizione del cuore sia integramente basata sulla fede, sull'amore e sul rispetto della Sua Parola (De 4:10, 29; 5:29). Quest'aspetto è palese nei genitori di Giovanni, poiché osservano \"tutti i comandamenti e i precetti del Signore in modo irreprensibile\" (1:6; vd. Ge 7:1; 17:1; 1R 9:4, dove si pone in risalto la locuzione \"integrità di cuore\"). Le persone \"giuste\" non sono certo perfette e senza difetti (vd nota Gb 1:1), tuttavia hanno seguito il Signore con sincerità, stabilendo con Lui uno stretto legame di comunione. In caso di peccato si sono subito sottomesse ai Suoi statuti, chiedendo e ricevendo il perdono, grazie a un atteggiamento di fede e di sincero pentimento, ravvedendosi e proponendosi di seguire Dio (Le 4:27-35; vd. articolo Il Giorno delle Espiazioni, pag. 214).",
-      en: "\"Righteous\" or \"upright\" (cf. Matt 8:20; see note Rev 2:9), such is the translation of the Greek term dikaios (Heb. kasher), which means \"honest\". In the O.T. this term holds a much broader and deeper significance regarding commandments: it identifies a person who positions himself in a proper relationship with God, both in heart and in actions (see notes Luke 1:75 and 32:2).\n\nThe righteousness that the Lord desires in the life of His people consists of a spiritual condition grounded upon faith, love and ritual respect whereby the heart's disposition is wholly based on faith, love, and reverence for His Word (Deut 4:10, 29; 5:29). This is evident in John's parents, as they observed \"all the Lord's commandments and regulations blamelessly\" (Luke 1:6; see Gen 7:1; 17:1; 1 Kings 9:4, which emphasizes \"integrity of heart\"). \"Righteous\" people are certainly not perfect and without flaw (see note Job 1:1); however, they follow the Lord purposefully with sincerity, establishing a close bond of fellowship with Him. Upon sinning, they swiftly submitted to His statutes, asking for and receiving forgiveness through an attitude of true faith and genuine repentance, turning back and resolving to thoroughly follow God (Lev 4:27-35; see article The Day of Atonement, p. 214)."
-    },
-    refs: {
-      it: "Mt 8:20; vd. nota Ap 2:9 • vd. note Lc 1:75 e 32:2 • De 4:10, 29; 5:29 • Lc 1:6; vd. Ge 7:1; 17:1; 1R 9:4 • vd nota Gb 1:1 • Le 4:27-35; vd. articolo Il Giorno delle Espiazioni, pag. 214",
-      en: "Matt 8:20; see note Rev 2:9 • see notes Luke 1:75 and 32:2 • Deut 4:10, 29; 5:29 • Luke 1:6; see Gen 7:1; 17:1; 1 Kings 9:4 • see note Job 1:1 • Lev 4:27-35; see article The Day of Atonement, p. 214"
-    }
-  },
-  "2:25b": {
-    title: {
-      it: "Aspettava la consolazione",
-      en: "Waiting for the consolation"
-    },
-    content: {
-      it: "Anche nei momenti in cui Israele si è trovato in gravi difficoltà spirituali, Simeone si è conservato devoto a Dio perché guidato dallo Spirito Santo. Ha atteso con fede, pazienza e con grande desiderio la venuta del Messia. Negli ultimi tempi, prima del ritorno di Cristo per la Sua Chiesa, molte persone abbandoneranno la fede e cesseranno di attendere la Sua venuta (Tt 2:13), tuttavia ci sarà sempre un rimanente fedele come Simeone. Altri riporranno la loro speranza nella precarietà dei beni terreni, ma quanti avranno seguito fedelmente il Signore saranno identificati come i servitori leali, descritti in Mt 24:45-47, che hanno vegliato tutta la notte in attesa del ritorno del loro padrone. La nostra speranza e il nostro desiderio devono essere volti a vedere a faccia a faccia \"Cristo il Signore\" (v. 26; cfr. Ap 22:24) e a vivere per sempre alla Sua presenza. Tutto ciò sarà realtà solamente se saremo trovati pronti al Suo ritorno (Ap 21, 22).",
-      en: "Even in times when Israel found itself in severe spiritual decline, Simeon kept himself devoutly focused on God because he was led by the Holy Spirit. He waited with faith, patience, and a deep longing for the coming of the Messiah. In the final days, before Christ's return for His Church, many people will abandon the faith and cease expecting His coming (Titus 2:13); nevertheless, there will always be a faithful remnant like Simeon. Others may place their hope in the fragility of earthly goods, but those who have faithfully followed the Lord will be identified as the loyal servants, described in Matt 24:45-47, who stayed awake all night awaiting their master's return. Our sole hope and desire must be directed to seeing \"Christ the Lord\" face to face (v. 26; cf. Rev 22:24) and living forever in His presence. All this will only become reality if we are found ready at His return (Rev 21, 22)."
-    },
-    refs: {
-      it: "Tt 2:13 • Mt 24:45-47 • Lc 2:26; cfr. Ap 22:24 • Ap 21, 22",
-      en: "Titus 2:13 • Matt 24:45-47 • Luke 2:26; cf. Rev 22:24 • Rev 21, 22"
-    }
+    refs: { it: "Is 9:6 • At 2:36", en: "Isa 9:6 • Acts 2:36" }
   },
   "2:35": {
-    title: {
-      it: "Una spada trapasserà l'anima",
-      en: "A sword will pierce your soul"
-    },
+    title: { it: "Una spada trafiggerà la tua anima", en: "A sword will pierce your soul" },
     content: {
-      it: "L'essere trafitta da una spada è un simbolo della grande sofferenza che si concretizzerà nel futuro di Maria, identificabile nel cruento rifiuto del Figlio da parte del popolo. Questo è il primo riferimento che Luca utilizza nel suo Vangelo per presentare la futura sofferenza e la morte di Cristo.",
-      en: "Being pierced by a sword serves as a symbol of the immense suffering that will materialize in Mary's future, identifiable in the cruel rejection of her Son by the people. This is the very first reference Luke uses in his Gospel to foreshadow the future suffering and eventual death of Christ."
-    }
-  },
-  "2:36": {
-    title: {
-      it: "Anna ... servendo",
-      en: "Anna ... serving"
+      it: "La profezia di Simeone a Maria anticipa la sofferenza della croce. Non è una maledizione ma una rivelazione: anche la madre del Messia avrebbe partecipato, attraverso il dolore, all'opera della redenzione.",
+      en: "Simeon's prophecy to Mary anticipates the suffering of the cross. It is not a curse but a revelation: even the mother of the Messiah would participate, through pain, in the work of redemption."
     },
-    content: {
-      it: "Anna è una profetessa che, come Simeone, ha sperato e si è preparata da lungo tempo per la venuta di Cristo. Rimasta vedova per molti anni, ha dedicato sé stessa completamente a Dio, \"digiunando e pregando\" notte e giorno. La Bibbia insegna che anche il rimanere non sposati può essere una grande benedizione e rappresentare un bene nel servire il Signore. L'apostolo Paolo, in una delle sue lettere, afferma che le persone non sposate hanno maggiori opportunità di concentrare le loro azioni nell'attuare i piani di Dio. Essendo senza vincoli possono con maggior facilità dedicare la massima attenzione e consacrazione a Lui (1Co 7:32-35).",
-      en: "Anna was a prophetess who, like Simeon, had hoped and prepared for a long time for the coming of Christ. As a widow of many years, she dedicated herself entirely to God, worshiping \"with fasting and prayer\" night and day. The Bible teaches that remaining unmarried can indeed be a great blessing and an asset in serving the Lord. The apostle Paul, in one of his letters, states that unmarried people have much greater opportunities to focus their actions on fulfilling God's plans. By being unhindered they can more easily devote their maximum attention and consecration directly to Him (1 Cor 7:32-35)."
-    },
-    refs: {
-      it: "1Co 7:32-35",
-      en: "1 Cor 7:32-35"
-    }
-  },
-  "2:40": {
-    title: {
-      it: "Il bambino cresceva",
-      en: "The child grew"
-    },
-    content: {
-      it: "Come tutti gli altri giovani, Gesù è passato attraverso il processo dello sviluppo fisico e della crescita spirituale, manifestando, però, un continuo approfondimento della propria sapienza, guidato in ciò dalla mano del Padre. Gesù è perfetto nella Sua natura umana, come nessuno lo è stato mai, agendo esattamente e in ogni momento secondo il desiderio di Dio.",
-      en: "Like all other youths, Jesus went through the customary process of physical development and spiritual growth, exhibiting, however, a continuous deepening of His own wisdom, guided meticulously in this by the Father's hand. Jesus was flawless in His human nature, as absolutely no one else had ever been, acting exactly and perfectly at all times according to God's desire."
-    }
-  },
-  "2:49": {
-    title: {
-      it: "Dovevo trovarmi nella casa del Padre mio",
-      en: "I must be in my Father's house"
-    },
-    content: {
-      it: "Gesù non avrebbe voluto allontanarsi dai Suoi genitori, ma questo è il momento in cui la Sua missione ha la precedenza su quanto è conveniente fare. È venuto sulla terra per adempiere i propositi del Padre: la Sua missione consiste in questo. È certamente eloquente il contrasto creato tra le parole di Gesù \"Padre mio\" (riferito a Dio) con il \"tuo padre\" detto da Maria (v. 48). Questo non rappresenta certo una mancanza di rispetto poiché già a dodici anni Gesù è consapevole del Suo rapporto unico con Dio, nondimeno, ha sempre ubbidito e seguito i Suoi genitori (v. 51; vd. articolo Genitori e Figli, pag. 2281).",
-      en: "Jesus would not have intentionally wanted to stray from His parents, but this was a pivotal moment where His mission superseded what was convenient to do. He came to earth to fulfill the overarching purposes of the Father: His earthly mission intrinsically consisted of this. The deliberate contrast created between Jesus' words \"my Father\" (referring to God) and the \"your father\" spoken by Mary (v. 48) is certainly eloquent. This in no way represents a lack of respect since already at twelve years old, Jesus was fully aware of His completely unique relationship with God; nonetheless, He obediently followed and submitted to His earthly parents (v. 51; see article Parents and Children, p. 2281)."
-    },
-    refs: {
-      it: "Lc 2:48 • Lc 2:51; vd. articolo Genitori e Figli, pag. 2281",
-      en: "Luke 2:48 • Luke 2:51; see article Parents and Children, p. 2281"
-    }
+    refs: { it: "Gv 19:25-27 • Zc 12:10", en: "John 19:25-27 • Zech 12:10" }
   },
   "2:52": {
+    title: { it: "Gesù cresceva in sapienza", en: "Jesus grew in wisdom" },
+    content: {
+      it: "Questo riferimento è quanto la Bibbia ci riferisce dell'adolescenza di Gesù. Da questo passo al cap. 3 trascorrono circa diciotto anni. Gesù raggiunge la completa maturità umana: mentalmente (sapienza), fisicamente (statura) e spiritualmente (in grazia davanti a Dio e agli uomini), rimanendo pienamente consapevole della Sua identità di Figlio di Dio.",
+      en: "This reference encapsulates all the Bible tells us about Jesus' adolescence. From this passage to chapter 3 approximately eighteen years elapse. Jesus attained full human maturity: mentally (wisdom), physically (stature) and spiritually (in favor with God and man), while remaining fully conscious of His identity as the Son of God."
+    },
+    refs: { it: "Mt 13:55 • Mr 6:3 • Lc 2:49", en: "Matt 13:55 • Mark 6:3 • Luke 2:49" }
+  },
+
+  // ─── INSIGHT TEOLOGICI - PROSPETTIVA EVANGELICA ─────────────────────────────
+
+  "genealogy_grace": {
     title: {
-      it: "Gesù cresceva in sapienza",
-      en: "Jesus grew in wisdom"
+      it: "La Fedeltà nel Patto: Una Stirpe di Grazia",
+      en: "Covenant Faithfulness: A Lineage of Grace"
     },
     content: {
-      it: "Questo riferimento è quanto la Bibbia ci riferisce dell'adolescenza di Gesù. Da questo passo al cap. 3 del testo trascorrono approssimativamente diciotto anni. Bisogna, in effetti, riconoscere che questa breve esposizione ci fornisce una buona descrizione della crescita di Gesù, mentre altri brani narrano gli ultimi anni della Sua vita. Dai testi di Mt 13:55 e Mr 6:3 apprendiamo che Gesù è cresciuto in una grande famiglia dove il padre è un buon falegname e dal quale pare abbia appreso tale mestiere. Il nome Giuseppe non è più menzionato altrove nelle Scritture, per cui parrebbe verosimile la sua morte prima dell'inizio del ministero pubblico di Gesù, facendo sì che Egli stesso abbia provveduto alle necessità della madre e dei Suoi fratelli. L'attività del falegname consisteva nell'eseguire riparazioni domestiche, costruzione di mobili e attrezzi vari usati in agricoltura, come aratri e gioghi. Le Scritture ci dicono che, nel corso di questi anni, Gesù ha raggiunto la completa maturità, mentalmente (saggezza), fisicamente (statura), socialmente e spiritualmente (davanti al Signore e agli uomini) (v. 52), pienamente consapevole del Suo Figlio di Dio (v. 49).",
-      en: "This reference encapsulates all the Bible tells us about Jesus' adolescence. From this brief passage to chapter 3 of the text, approximately eighteen long years elapse. In fact, we must acknowledge that this concise exposition provides an excellent description of Jesus' overall growth, whereas other passages focus solely on the final years of His life. From the texts of Matt 13:55 and Mark 6:3 we learn that Jesus grew up in a very large family where the father was a decent carpenter and from whom He apparently learned the grueling trade. The name Joseph is no longer ever mentioned elsewhere in the Scriptures, thus it appears highly plausible that he passed away before the beginning of Jesus' public ministry, inherently causing Jesus Himself to dutifully provide for the ongoing needs of His mother and brothers. The trade of a carpenter largely consisted of making domestic repairs, the construction of furniture, and handling various heavy tools used in intensive agriculture, such as structural plows and yokes. The Scriptures tell us that, throughout these shaping years, Jesus successfully attained full maturity, developing mentally (wisdom), physically (stature), socially and spiritually (favor with God and man) (v. 52), fully and unreservedly conscious of His divine identity as the Son of God (v. 49)."
+      it: `La genealogia di Gesù (Mt 1:1-17) è tra le pagine più sovversive della Bibbia. In un mondo antico ossessionato dalla purezza di sangue e dal merito genealogico, Matteo include quattro donne che nessuno scriba ebreo avrebbe mai inserito volontariamente:
+
+**Tamar** seduce suo suocero Giuda per ottenere giustizia (Gen 38). **Rahab**, una prostituta cananea, salva le spie israelite per fede (Gs 2). **Rut** è una straniera moabita, esclusa per legge dalla congregazione d'Israele (Dt 23:3). **Betsabea** è la donna con cui Davide commise adulterio (2Sam 11).
+
+Perché Matteo le include? Non come eccezioni imbarazzanti, ma come dichiarazione teologica: la promessa fatta ad Abraamo — «in te saranno benedette tutte le nazioni della terra» (Gen 12:3) — si compie non attraverso la perfezione morale, ma attraverso la grazia imperscrutabile di Dio.
+
+Paolo lo dirà esplicitamente in Galati 3:16: le promesse «non furono fatte alla discendenza come a molti, ma come a uno solo: alla tua discendenza, che è Cristo». L'intera genealogia è un vettore che punta verso un solo nome. Ogni peccatore, ogni straniero nella lista non è una macchia: è la prova che Dio mantiene le Sue promesse nonostante l'imperfezione dei Suoi strumenti.
+
+La stirpe del Messia è fondata sulla Grazia — non sul merito, non sulla purezza etnica, non sulla rettitudine legale. È il Vangelo già scritto nell'Antico Testamento.`,
+      en: `The genealogy of Jesus (Matt 1:1-17) is among the most subversive passages in Scripture. In an ancient world obsessed with bloodline purity and genealogical merit, Matthew includes four women no Jewish scribe would have voluntarily included:
+
+**Tamar** seduces her father-in-law Judah to obtain justice (Gen 38). **Rahab**, a Canaanite prostitute, saves the Israelite spies by faith (Josh 2). **Ruth** is a foreign Moabite woman, legally excluded from the congregation of Israel (Deut 23:3). **Bathsheba** is the woman with whom David committed adultery (2 Sam 11).
+
+Why does Matthew include them? Not as embarrassing exceptions, but as a theological declaration: the promise made to Abraham—"in you all the nations of the earth shall be blessed" (Gen 12:3)—is fulfilled not through moral perfection, but through the inscrutable grace of God.
+
+Paul states it explicitly in Galatians 3:16: the promises "were not made to many descendants, but to one—'to your offspring,' who is Christ." The entire genealogy is a vector pointing toward one name. Every sinner, every foreigner in the list is not a blemish: it is proof that God keeps His promises despite the imperfection of His instruments.
+
+The lineage of the Messiah is founded on Grace—not merit, not ethnic purity, not legal righteousness. This is the Gospel already written in the Old Testament.`
     },
     refs: {
-      it: "Lc 3 • Mt 13:55; Mr 6:3 • Lc 2:49, 52",
-      en: "Luke 3 • Matt 13:55; Mark 6:3 • Luke 2:49, 52"
+      it: "Gen 12:3 • Gal 3:16 • Gs 2:1-11 • Rut 1:16-17 • Rm 4:16",
+      en: "Gen 12:3 • Gal 3:16 • Josh 2:1-11 • Ruth 1:16-17 • Rom 4:16"
+    }
+  },
+
+  "annunciation_favor": {
+    title: {
+      it: "Il Favore Immeritato: Maria e la Grazia",
+      en: "Unmerited Favor: Mary and Grace"
+    },
+    content: {
+      it: `L'angelo saluta Maria con una parola greca rara e densa: «Kecharitomene» (Lc 1:28). Il termine deriva da «charis» — grazia — e significa letteralmente «colei che è stata oggetto della grazia di Dio», ovvero «favorita dalla grazia».
+
+È cruciale capire la direzione: Maria non è la fonte della grazia, ma la sua destinataria. La grazia fluisce da Dio verso Maria, non il contrario. Paolo usa la stessa radice greca in Efesini 2:8 — «è per grazia che siete stati salvati» — per descrivere il dono unilaterale di Dio all'umanità. Maria è il prototipo del credente che riceve la grazia divina con umiltà e obbedienza.
+
+La risposta di Maria è il modello perfetto della fede salvifica: «Ecco, io sono la serva del Signore; mi sia fatto secondo la tua parola» (v. 38). Non contratta, non negozia, non chiede garanzie. Si affida totalmente alla parola di Dio, proprio come Abraamo fu dichiarato giusto per fede (Rm 4:3).
+
+Sette secoli prima, Isaia aveva profetizzato: «Ecco, la vergine sarà incinta» (Is 7:14). Maria non è scelta per la sua perfezione, ma perché Dio onora la Sua promessa. La Riforma protestante ha sempre insistito su questo punto: Maria è glorificata non per ciò che ha fatto, ma per ciò che Dio ha fatto in lei. Il suo stesso canto — il Magnificat — lo proclama: «Il Possente ha fatto grandi cose per me» (Lc 1:49).`,
+      en: `The angel greets Mary with a rare and weighty Greek word: "Kecharitomene" (Luke 1:28). The term derives from "charis"—grace—and literally means "one who has been made an object of God's grace," or "favored woman."
+
+It is crucial to understand the direction: Mary is not the source of grace but its recipient. Grace flows from God to Mary, not the other way around. Paul uses the same Greek root in Ephesians 2:8—"it is by grace you have been saved"—to describe God's unilateral gift to humanity. Mary is the prototype of the believer who receives divine grace with humility and obedience.
+
+Mary's response is the perfect model of saving faith: "I am the Lord's servant. May everything you have said about me come true" (v. 38). She does not bargain, does not negotiate, does not demand guarantees. She entrusts herself completely to God's word, just as Abraham was declared righteous by faith (Rom 4:3).
+
+Seven centuries earlier, Isaiah had prophesied: "Look! The virgin will conceive" (Isa 7:14). Mary is not chosen for her perfection, but because God honors His promise. The Protestant Reformation always insisted on this point: Mary is glorified not for what she did, but for what God did in her. Her own canticle—the Magnificat—proclaims it: "The Mighty One has done great things for me" (Luke 1:49).`
+    },
+    refs: {
+      it: "Ef 2:8 • Is 7:14 • Lc 1:38 • Lc 1:49 • Rm 4:3",
+      en: "Eph 2:8 • Isa 7:14 • Luke 1:38 • Luke 1:49 • Rom 4:3"
+    }
+  },
+
+  "incarnation_mystery": {
+    title: {
+      it: "L'Umiltà dell'Infinito: Il Dio che Si Fa Carne",
+      en: "The Humility of the Infinite: God Becomes Flesh"
+    },
+    content: {
+      it: `«E il Verbo si fece carne» (Gv 1:14). Tre parole greche — «ho Logos sarx egeneto» — che hanno diviso la storia. Il dibattito teologico su di esse ha riempito secoli di concili e ha definito il confine tra fede cristiana e ogni altra religione del mondo.
+
+L'Incarnazione non è Dio che «si traveste» da umano. È il Figlio eterno che assume su di Sé una natura umana completa — con i Suoi limiti, le Sue emozioni, il Suo dolore — senza abbandonare la Sua divinità. I teologi la chiamano l'unione ipostatica: due nature, una persona.
+
+Paolo in Filippesi 2:5-8 usa il termine greco «kenosis» — svuotamento: «non considerò un tesoro geloso la sua uguaglianza con Dio, ma spogliò sé stesso». L'Onnipotente che accetta la fame, la stanchezza, il pianto, la morte. Perché? Per diventare il Sommo Sacerdote perfetto.
+
+Ebrei 4:15 spiega il disegno: «Poiché non abbiamo un sommo sacerdote che non possa simpatizzare con le nostre debolezze; ma ne abbiamo uno che è stato tentato in ogni cosa come noi, senza però peccare». Gesù non è un Dio distante. È un Dio che sa cosa vuol dire essere umano — e per questo può intercedere per noi con piena competenza.
+
+La mangiatoia non è una sconfitta. È una scelta. È Dio che dice: «Vengo a stare nella vostra miseria per trasformarla dall'interno». La gloria si nasconde nell'umiltà.`,
+      en: `"And the Word became flesh" (John 1:14). Three Greek words—"ho Logos sarx egeneto"—that have divided history. Theological debate about them has filled centuries of councils and has defined the boundary between the Christian faith and every other religion in the world.
+
+The Incarnation is not God "dressing up" as human. It is the eternal Son taking upon Himself a complete human nature—with its limitations, emotions, and pain—without abandoning His divinity. Theologians call this the hypostatic union: two natures, one person.
+
+Paul in Philippians 2:5-8 uses the Greek term "kenosis"—emptying: "he did not consider equality with God something to be used to his own advantage; rather, he made himself nothing." The Almighty accepting hunger, weariness, tears, and death. Why? To become the perfect High Priest.
+
+Hebrews 4:15 explains the design: "For we do not have a high priest who is unable to empathize with our weaknesses, but we have one who has been tempted in every way, just as we are—yet he did not sin." Jesus is not a distant God. He is a God who knows what it means to be human—and for this reason can intercede for us with full understanding.
+
+The manger is not a defeat. It is a choice. It is God saying: "I am coming to dwell in your misery to transform it from within." Glory hides in humility.`
+    },
+    refs: {
+      it: "Gv 1:14 • Fil 2:5-8 • Eb 4:15 • 2Cor 8:9",
+      en: "John 1:14 • Phil 2:5-8 • Heb 4:15 • 2 Cor 8:9"
+    }
+  },
+
+  "magi_shepherds": {
+    title: {
+      it: "Il Re Universale: I Sapienti e i Pastori",
+      en: "The Universal King: The Wise Men and the Shepherds"
+    },
+    content: {
+      it: `Dio sceglie deliberatamente due gruppi agli antipodi della società per annunciare la nascita del Re del mondo. Questo contrasto non è accidentale: è una finestra sul cuore del Vangelo.
+
+**I pastori** erano ai margini della società ebraica del I secolo: il loro lavoro li rendeva ritualmente impuri e incapaci di testimoniare in un tribunale. Eppure sono i primi a ricevere la notizia. Dio bypassa i sacerdoti, bypassa i Farisei, bypassa i potenti — e va dai dimenticati.
+
+**I Magi** vengono dall'oriente — probabilmente Persia o Babilonia — e sono pagani astronomi/astrologi. Non appartengono al patto d'Abraamo. Non conoscono la Torah. Eppure sono guidati da una stella e arrivano a prostrarsi davanti al bambino. Il Sal 72:10-11 aveva profetizzato: «I re di Tarsis e delle isole porteranno doni... tutti i re si prostreranno davanti a lui».
+
+Michea 5:2 aveva predetto che da Betlemme — la più piccola delle città di Giuda — sarebbe uscito il Pastore d'Israele. Il potente emerge dal piccolo. Il universale nasce nel particolare.
+
+**Il messaggio teologico è rivoluzionario**: il Messia non viene per una nazione, una classe sociale, un livello di cultura. Viene per ogni persona disposta a mettersi in ginocchio davanti a lui. In Cristo, «non vi è né Giudeo né Greco, né schiavo né libero» (Gal 3:28). La mangiatoia e la stella di Betlemme sono aperti a tutti.`,
+      en: `God deliberately chooses two groups at the opposite ends of society to announce the birth of the King of the world. This contrast is not accidental: it is a window into the heart of the Gospel.
+
+**The shepherds** were on the margins of first-century Jewish society: their work made them ritually impure and unable to testify in court. Yet they are the first to receive the news. God bypasses the priests, bypasses the Pharisees, bypasses the powerful—and goes to the forgotten.
+
+**The Magi** come from the east—likely Persia or Babylon—and are pagan astronomers/astrologers. They do not belong to Abraham's covenant. They do not know the Torah. Yet they are guided by a star and arrive to bow before the child. Psalm 72:10-11 had prophesied: "The kings of Tarshish and of distant shores will bring tribute... all kings will bow down to him."
+
+Micah 5:2 had predicted that from Bethlehem—the least of Judah's cities—the Shepherd of Israel would come. The mighty emerges from the small. The universal is born in the particular.
+
+**The theological message is revolutionary**: the Messiah does not come for one nation, one social class, one level of culture. He comes for every person willing to kneel before him. In Christ, "there is neither Jew nor Gentile, neither slave nor free" (Gal 3:28). The manger and the star of Bethlehem are open to all.`
+    },
+    refs: {
+      it: "Sal 72:10-11 • Mic 5:2 • Gal 3:28 • Is 60:3",
+      en: "Ps 72:10-11 • Mic 5:2 • Gal 3:28 • Isa 60:3"
+    }
+  },
+
+  "presentation_temple": {
+    title: {
+      it: "La Consolazione d'Israele: Il Nunc Dimittis",
+      en: "The Consolation of Israel: The Nunc Dimittis"
+    },
+    content: {
+      it: `Simeone è l'immagine di Israele che ha atteso per secoli. Il suo cantico — chiamato «Nunc Dimittis» dalle prime parole della versione latina («Ora lasci andare») — è il canto di chi vede finalmente realizzata la promessa in cui ha investito tutta una vita.
+
+Egli teneva in braccio un bambino di quaranta giorni. Ma con gli occhi illuminati dallo Spirito Santo (v. 27), vedeva l'intera storia della salvezza ricapitolata in quel bambino.
+
+La sua proclamazione cita il Servo del Signore di Isaia 42:6 e 49:6: «Io ti ho fatto luce delle nazioni, perché tu sia la mia salvezza fino all'estremità della terra». Due destinatari: le genti (ethnè) e Israele. Non uno o l'altro — entrambi. Il Messia non abbandona il suo popolo per aprirsi al mondo; porta entrambi alla stessa redenzione.
+
+L'espressione «consolazione d'Israele» (v. 25) richiama Isaia 40:1 — «Consolate, consolate il mio popolo» — la grande promessa del ritorno dall'esilio. Simeone vede in Gesù la fine dell'esilio definitivo: non l'esilio geografico in Babilonia, ma l'esilio spirituale dell'umanità lontana da Dio.
+
+La profezia sulla spada (v. 35) introduce una nota solenne: questa salvezza non sarà senza costo. L'ombra della croce si allunga già sulla mangiatoia.`,
+      en: `Simeon is the image of Israel that has waited for centuries. His canticle—called "Nunc Dimittis" from the first words of the Latin version ("Now let [your servant] depart")—is the song of one who finally sees the promise come true, the promise in which he has invested his entire life.
+
+He held a forty-day-old baby in his arms. Yet with eyes illuminated by the Holy Spirit (v. 27), he saw the entire history of salvation recapitulated in that child.
+
+His proclamation quotes the Servant of the Lord from Isaiah 42:6 and 49:6: "I will make you a light for the nations, that my salvation may reach to the ends of the earth." Two recipients: the Gentiles (ethnè) and Israel. Not one or the other—both. The Messiah does not abandon his people to open himself to the world; he brings both to the same redemption.
+
+The expression "consolation of Israel" (v. 25) recalls Isaiah 40:1—"Comfort, comfort my people"—the great promise of return from exile. Simeon sees in Jesus the end of the ultimate exile: not the geographical exile in Babylon, but the spiritual exile of humanity estranged from God.
+
+The prophecy about the sword (v. 35) introduces a solemn note: this salvation will not be without cost. The shadow of the cross already lengthens over the manger.`
+    },
+    refs: {
+      it: "Is 42:6 • Is 49:6 • Is 40:1 • Lc 2:29-35",
+      en: "Isa 42:6 • Isa 49:6 • Isa 40:1 • Luke 2:29-35"
+    }
+  },
+
+  "flight_exodus": {
+    title: {
+      it: "Il Vero Israele: La Fuga nell'Adempimento",
+      en: "The True Israel: Flight in Fulfillment"
+    },
+    content: {
+      it: `Matteo cita Osea 11:1 — «Dall'Egitto ho chiamato mio figlio» — come profezia adempiuta dalla fuga in Egitto e dal ritorno (Mt 2:15). Per un lettore moderno potrebbe sembrare un'interpretazione forzata: Osea parlava dell'esodo di Israele dall'Egitto sotto Mosè, non di Gesù.
+
+Ma Matteo usa una tecnica ermeneutica sofisticata, radicata nel pensiero ebraico del I secolo: la tipologia. Israele era chiamato «figlio di Dio» nell'Antico Testamento (Es 4:22). La storia di Israele — dal l'Egitto al deserto, alla Terra Promessa — è un tipo che prefigura la storia di Gesù. Gesù non è un personaggio nuovo: è l'Israele definitivo, l'umanità fedele a Dio dove il popolo antico aveva fallito.
+
+Rileggi la vita di Gesù con questa lente:
+- **L'Egitto → Il Battesimo**: Come Israele attraversò il Mar Rosso, Gesù attraversa le acque del Giordano.
+- **Il Deserto**: Come Israele fu tentato 40 anni nel deserto, Gesù è tentato 40 giorni.
+- **Il Sinai → Il Sermone sul Monte**: Come Mosè ricevette la Legge sul monte, Gesù la porta a compimento.
+
+Dove Israele mormorò, Gesù obbedì. Dove il popolo idolatrò, Gesù adorò solo il Padre. Gesù vive perfettamente la vocazione che Israele aveva fallito. Per questo può diventare il Mediatore del nuovo patto: non come sostituto di Israele, ma come il suo compimento definitivo.
+
+«Io sono la vera vite» (Gv 15:1): ogni metafora d'Israele si risolve in Lui.`,
+      en: `Matthew quotes Hosea 11:1—"Out of Egypt I called my son"—as a prophecy fulfilled by the flight to Egypt and the return (Matt 2:15). To a modern reader this might seem a forced interpretation: Hosea was speaking of Israel's exodus from Egypt under Moses, not of Jesus.
+
+But Matthew uses a sophisticated hermeneutical technique, rooted in first-century Jewish thought: typology. Israel was called "son of God" in the Old Testament (Exod 4:22). Israel's history—from Egypt to the desert, to the Promised Land—is a type that prefigures the story of Jesus. Jesus is not a new character: He is the definitive Israel, the humanity faithful to God where the ancient people had failed.
+
+Reread the life of Jesus through this lens:
+- **Egypt → Baptism**: As Israel crossed the Red Sea, Jesus crosses the waters of the Jordan.
+- **The Wilderness**: As Israel was tested 40 years in the desert, Jesus is tempted 40 days.
+- **Sinai → Sermon on the Mount**: As Moses received the Law on the mountain, Jesus brings it to fulfillment.
+
+Where Israel grumbled, Jesus obeyed. Where the people worshiped idols, Jesus worshiped the Father alone. Jesus perfectly lives the calling that Israel had failed. For this reason He can become the Mediator of the new covenant: not as Israel's replacement, but as its ultimate fulfillment.
+
+"I am the true vine" (John 15:1): every metaphor of Israel is resolved in Him.`
+    },
+    refs: {
+      it: "Os 11:1 • Es 4:22 • Mt 2:15 • Gv 15:1 • Rm 9:4-5",
+      en: "Hos 11:1 • Exod 4:22 • Matt 2:15 • John 15:1 • Rom 9:4-5"
+    }
+  },
+
+  "jesus_temple_12": {
+    title: {
+      it: "La Priorità del Padre: La Prima Parola di Gesù",
+      en: "The Priority of the Father: Jesus' First Recorded Words"
+    },
+    content: {
+      it: `«Non sapevate che io dovevo trovarmi nella casa del Padre mio?» (Lc 2:49). Queste sono le prime parole registrate di Gesù nel Vangelo di Luca, e ogni termine conta.
+
+Il greco dice «en tois tou Patros mou» — letteralmente «nelle cose del Padre mio». Non solo un edificio fisico, ma l'intera sfera di ciò che appartiene a Dio. A dodici anni, Gesù è già pienamente consapevole di una relazione unica e esclusiva con Dio che va oltre quella di qualsiasi altro essere umano.
+
+Maria aveva detto «tuo padre» riferendosi a Giuseppe (v. 48). Gesù risponde con «il Padre mio» — usando una forma possessiva che nel giudaismo del I secolo era teologicamente carica: nessun ebreo avrebbe mai usato «mio Padre» per riferirsi a Dio in modo così diretto e personale. È una dichiarazione velata ma inequivocabile di identità divina.
+
+Il Sal 27:4 esprime il desiderio del salmista: «Una cosa ho chiesto al Signore, e questa ricerco: che io possa abitare nella casa del Signore tutti i giorni della mia vita». Gesù non ha questo desiderio: Lui appartiene alla casa del Padre. Non è un visitatore — è a casa.
+
+In Giovanni 4:34, adulto, Gesù dirà: «Il mio cibo è fare la volontà di colui che mi ha mandato». Il bambino di dodici anni e l'adulto che incontra la Samaritana hanno lo stesso centro: il Padre e la Sua missione. Questa coerenza interna — identità stabile dall'infanzia alla croce — è uno dei segni più profondi dell'autenticità storica dei Vangeli.
+
+Eppure — ed è altrettanto importante — questo stesso Gesù «tornò con loro a Nazaret e stava loro sottomesso» (v. 51). La piena divinità non distrugge la vera umanità. Questo è il cuore del mistero cristologico.`,
+      en: `"Didn't you know that I must be in my Father's house?" (Luke 2:49). These are the first recorded words of Jesus in Luke's Gospel, and every term matters.
+
+The Greek reads "en tois tou Patros mou"—literally "in the things of my Father." Not just a physical building, but the entire sphere of what belongs to God. At twelve years old, Jesus is already fully aware of a unique and exclusive relationship with God that goes beyond that of any other human being.
+
+Mary had said "your father" referring to Joseph (v. 48). Jesus responds with "my Father"—using a possessive form that in first-century Judaism was theologically charged: no Jew would ever use "my Father" to refer to God in such a direct and personal way. It is a veiled but unmistakable declaration of divine identity.
+
+Psalm 27:4 expresses the psalmist's longing: "One thing I ask from the Lord, this only do I seek: that I may dwell in the house of the Lord all the days of my life." Jesus does not merely long for this: He belongs to the Father's house. He is not a visitor—He is at home.
+
+In John 4:34, as an adult, Jesus says: "My food is to do the will of him who sent me." The twelve-year-old boy and the adult meeting the Samaritan woman share the same center: the Father and His mission. This internal coherence—stable identity from childhood to the cross—is one of the deepest signs of the historical authenticity of the Gospels.
+
+Yet—and this is equally important—this same Jesus "went down to Nazareth with them and was obedient to them" (v. 51). Full divinity does not destroy true humanity. This is the heart of the Christological mystery.`
+    },
+    refs: {
+      it: "Sal 27:4 • Gv 4:34 • Lc 2:49-51 • Fil 2:6-8",
+      en: "Ps 27:4 • John 4:34 • Luke 2:49-51 • Phil 2:6-8"
+    }
+  },
+
+  // ─── INSIGHT SUPPLEMENTARI ───────────────────────────────────────────────────
+
+  "genealogy_fulfillment": {
+    title: {
+      it: "L'Adempimento della Promessa",
+      en: "The Fulfillment of the Promise"
+    },
+    content: {
+      it: `La genealogia di Gesù non è un semplice elenco di nomi: è la storia della fedeltà di Dio. Ogni nome è un anello in una catena di promesse che si estende per millenni. Matteo dimostra che Gesù è il legittimo erede del trono di Davide (2Sam 7:12-16) e il seme promesso ad Abraamo in cui tutte le nazioni sarebbero state benedette (Gen 12:3). Luca, risalendo fino ad Adamo «figlio di Dio», proclama che Gesù è venuto per redimere non solo Israele ma l'intera umanità.`,
+      en: `Jesus' genealogy is not a simple list of names: it is the story of God's faithfulness. Each name is a link in a chain of promises stretching across millennia. Matthew proves that Jesus is the rightful heir to the throne of David (2 Sam 7:12-16) and the seed promised to Abraham in whom all nations would be blessed (Gen 12:3). Luke, tracing back to Adam "son of God," declares that Jesus came to redeem not only Israel but all of humanity.`
+    },
+    refs: {
+      it: "2Sam 7:12-16 • Gen 12:3 • Gal 3:16 • Lc 3:38",
+      en: "2 Sam 7:12-16 • Gen 12:3 • Gal 3:16 • Luke 3:38"
+    }
+  },
+
+  "immanuel_prophecy": {
+    title: {
+      it: "Emmanuele: Dio con Noi",
+      en: "Immanuel: God With Us"
+    },
+    content: {
+      it: `Matteo cita Isaia 7:14 — una profezia pronunciata 700 anni prima — e ne vede l'adempimento definitivo in Gesù. Il nome «Emmanuele» (in ebraico: «Immanu-El») significa letteralmente «Dio con noi». Il Nome «Gesù» (dall'ebraico «Yeshua» = «YHWH salva») rivela la missione: salvare il popolo dai loro peccati. Il Vangelo di Matteo si chiude con le parole di Gesù risorto: «Io sono con voi tutti i giorni» (28:20) — un'eco deliberata di «Emmanuele».`,
+      en: `Matthew quotes Isaiah 7:14—a prophecy spoken 700 years earlier—and sees its ultimate fulfillment in Jesus. The name "Immanuel" (in Hebrew: "Immanu-El") literally means "God with us." The Name "Jesus" (from the Hebrew "Yeshua" = "YHWH saves") reveals the mission: to save his people from their sins. Matthew's Gospel closes with the words of the risen Jesus: "I am with you always" (28:20)—a deliberate echo of "Immanuel."`
+    },
+    refs: {
+      it: "Is 7:14 • Sal 130:8 • Mt 1:21-23 • Mt 28:20",
+      en: "Isa 7:14 • Ps 130:8 • Matt 1:21-23 • Matt 28:20"
+    }
+  },
+
+  "magi_worship": {
+    title: {
+      it: "I Doni dei Magi: Oro, Incenso e Mirra",
+      en: "The Magi's Gifts: Gold, Frankincense and Myrrh"
+    },
+    content: {
+      it: `I tre doni hanno un profondo valore simbolico: **Oro** — il metallo dei re, riconosce la regalità di Gesù (Ap 17:14). **Incenso** — usato nel culto del Tempio (Es 30:34), è il dono per la divinità. Confessa che Gesù è Dio incarnato. **Mirra** — una resina amara usata nell'imbalsamazione dei defunti (Gv 19:39). Profezia oscura ma certa sulla morte redentrice del bambino. I Magi «dall'oriente» sono il primo adempimento di Is 60:3: «Le nazioni cammineranno alla tua luce».`,
+      en: `The three gifts carry profound symbolic significance: **Gold**—the metal of kings, recognizing Jesus' royalty (Rev 17:14). **Frankincense**—used in Temple worship (Exod 30:34), it is the gift for divinity, confessing Jesus as God incarnate. **Myrrh**—a bitter resin used in embalming the dead (John 19:39). A dark but certain prophecy of the child's redemptive death. The Magi "from the east" are the first fulfillment of Isa 60:3: "Nations will come to your light."`
+    },
+    refs: {
+      it: "Is 60:3 • Es 30:34 • Gv 19:39 • Ap 17:14",
+      en: "Isa 60:3 • Exod 30:34 • John 19:39 • Rev 17:14"
+    }
+  },
+
+  "flight_providence": {
+    title: {
+      it: "La Provvidenza nella Fuga",
+      en: "Providence in the Flight"
+    },
+    content: {
+      it: `La fuga in Egitto rivela una legge fondamentale della storia della salvezza: Dio usa le avversità per compiere i Suoi piani. Erode crede di essere il padrone della storia; in realtà, le sue stesse azioni adempiono le profezie. Matteo vede nella fuga e nel ritorno dall'Egitto il «tipo» profetico di Osea 11:1: come Israele fu chiamato fuori dall'Egitto, così il nuovo Israele — Gesù — ripercorre lo stesso cammino. La strage degli innocenti richiama Es 1:16 ed è segnata dalla promessa di Ger 31:15-17: anche nel pianto, la storia continua.`,
+      en: `The flight to Egypt reveals a fundamental law of salvation history: God uses adversity to accomplish His plans. Herod believes he is the master of history; in reality, his very actions fulfill the prophecies. Matthew sees in the flight and return from Egypt the prophetic "type" of Hosea 11:1: just as Israel was called out of Egypt, so the new Israel—Jesus—retraces that same path. The massacre of the innocents recalls Exod 1:16 and is marked by the promise of Jer 31:15-17: even in weeping, the story continues.`
+    },
+    refs: {
+      it: "Os 11:1 • Es 1:16 • Ger 31:15-17 • Mt 2:13-23",
+      en: "Hos 11:1 • Exod 1:16 • Jer 31:15-17 • Matt 2:13-23"
+    }
+  },
+
+  "simeon_nunc_dimittis": {
+    title: {
+      it: "Il Nunc Dimittis: La Luce delle Nazioni",
+      en: "The Nunc Dimittis: Light for the Nations"
+    },
+    content: {
+      it: `Il cantico di Simeone è uno dei quattro inni della natività in Luca. Egli vede in un bambino di quaranta giorni la «salvezza» preparata «dinanzi a tutti i popoli» — due dimensioni inseparabili: «luce per illuminare le genti» (Is 42:6) e «gloria del tuo popolo Israele». L'universalismo cristologico non è un'invenzione paolina: è già nel cuore della profezia vetero-testamentaria, ora adempiuta nella persona concreta di Gesù.`,
+      en: `Simeon's canticle is one of the four nativity hymns in Luke. He sees in a forty-day-old child the "salvation" prepared "for all peoples"—two inseparable dimensions: "a light for revelation to the Gentiles" (Isa 42:6) and "the glory of your people Israel." Christological universalism is not a Pauline invention: it is already at the heart of Old Testament prophecy, now fulfilled in the concrete person of Jesus.`
+    },
+    refs: {
+      it: "Is 42:6 • Is 49:6 • Is 40:1 • Lc 2:29-35",
+      en: "Isa 42:6 • Isa 49:6 • Isa 40:1 • Luke 2:29-35"
+    }
+  },
+
+  "young_jesus_identity": {
+    title: {
+      it: "La Coscienza del Figlio di Dio",
+      en: "The Consciousness of the Son of God"
+    },
+    content: {
+      it: `A dodici anni, Gesù possiede già una piena consapevolezza della Sua identità come Figlio di Dio. Le Sue prime parole in Luca — «Non sapevate che io dovevo trovarmi nella casa del Padre mio?» — sono una dichiarazione di relazione ontologica con Dio. Eppure, subito dopo, «tornò con loro a Nazaret e stava loro sottomesso» (v. 51). Piena divinità e vera umanità coesistono in armonia. E il versetto finale — «Gesù cresceva in sapienza, in statura e in grazia» — rivela che l'Incarnazione è reale: il Figlio di Dio ha vissuto pienamente l'esperienza della crescita umana.`,
+      en: `At twelve years old, Jesus already possesses a full awareness of His identity as the Son of God. His first words in Luke—"Didn't you know that I must be in my Father's house?"—are a declaration of ontological relationship with God. Yet immediately afterward, "he went down to Nazareth with them and was obedient to them" (v. 51). Full divinity and true humanity coexist in harmony. And the final verse—"Jesus grew in wisdom and stature and in favor with God and man"—reveals that the Incarnation is real: the Son of God fully lived the experience of human growth.`
+    },
+    refs: {
+      it: "Lc 2:41-52 • Fil 2:6-8 • Eb 4:15 • Gv 1:14",
+      en: "Luke 2:41-52 • Phil 2:6-8 • Heb 4:15 • John 1:14"
     }
   }
 };

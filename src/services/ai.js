@@ -2,18 +2,18 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const API_KEY = import.meta.env.VITE_AI_API_KEY;
 
-// Debug log (solo per sviluppo, non logghiamo la chiave intera per sicurezza)
-console.log("Variabile VITE_AI_API_KEY caricata:", API_KEY ? `SÌ (inizia con ${API_KEY.substring(0, 5)}...)` : "NO");
+// Debug log — only for development. We do not log the full key for security reasons.
+console.log("VITE_AI_API_KEY loaded:", API_KEY ? `YES (starts with ${API_KEY.substring(0, 5)}...)` : "NO");
 
 if (!API_KEY) {
-  console.warn("VITE_AI_API_KEY non definita nelle variabili d'ambiente. La chat AI non funzionerà.");
+  console.warn("VITE_AI_API_KEY is not defined in environment variables. The AI chat will not function.");
 }
 
 const genAI = new GoogleGenerativeAI(API_KEY || "dummy-key");
 
 export const getGeminiResponse = async (prompt, systemInstruction = "") => {
   if (!API_KEY) {
-    throw new Error("Chiave API mancante. Assicurati che .env.local contenga VITE_AI_API_KEY.");
+    throw new Error("Missing API key. Make sure .env.local contains VITE_AI_API_KEY.");
   }
 
   try {
@@ -22,15 +22,15 @@ export const getGeminiResponse = async (prompt, systemInstruction = "") => {
       systemInstruction: systemInstruction
     });
 
-    console.log("Inviando richiesta a Gemini...");
+    console.log("Sending request to Gemini...");
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    console.log("Risposta ricevuta con successo!");
+    console.log("Response received successfully.");
     return text;
   } catch (error) {
-    // Log dettagliato dell'errore per il debug
-    console.error("Dettaglio Errore Gemini API:", {
+    // Detailed error log for debugging
+    console.error("Gemini API error details:", {
       message: error.message,
       stack: error.stack,
       raw: error

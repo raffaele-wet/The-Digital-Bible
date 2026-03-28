@@ -118,5 +118,102 @@ export const glossary = [
       it: "Il fiume principale della Terra Santa, simbolo di passaggio e purificazione nell'Antico e Nuovo Testamento.",
       en: "The main river of the Holy Land, a symbol of passage and purification in both the Old and New Testaments."
     }
+  },
+  {
+    keywords: { it: ["Centurione", "centurioni"], en: ["Centurion", "centurions"] },
+    term: { it: "Centurione", en: "Centurion" },
+    description: {
+      it: "Ufficiale dell'esercito romano al comando di una 'centuria' (circa 100 soldati). Molti centurioni nel Vangelo mostrano un'inaspettata apertura spirituale.",
+      en: "A Roman army officer commanding a 'century' (about 100 soldiers). Several centurions in the Gospels show unexpected spiritual openness."
+    }
+  },
+  {
+    keywords: { it: ["Pubblicano", "pubblicani"], en: ["Tax collector", "tax collectors"] },
+    term: { it: "Pubblicano", en: "Tax Collector" },
+    description: {
+      it: "Esattore delle tasse per l'Impero Romano. Erano odiati dai Giudei perché considerati traditori e spesso corrotti.",
+      en: "A tax collector for the Roman Empire. They were hated by the Jews as traitors and were often corrupt."
+    }
+  },
+  {
+    keywords: { it: ["Sinagoga", "sinagoghe"], en: ["Synagogue", "synagogues"] },
+    term: { it: "Sinagoga", en: "Synagogue" },
+    description: {
+      it: "Luogo di assemblea, preghiera e studio della Torah per la comunità ebraica locale.",
+      en: "A place of assembly, prayer, and Torah study for the local Jewish community."
+    }
+  },
+  {
+    keywords: { it: ["Lebbroso", "lebbra", "lebbrosi"], en: ["Leper", "leprosy", "lepers"] },
+    term: { it: "Lebbroso", en: "Leper" },
+    description: {
+      it: "Persona affetta da una malattia della pelle che comportava l'esclusione sociale e cerimoniale assoluta secondo la Legge.",
+      en: "Someone suffering from a skin disease that required absolute social and ceremonial exclusion according to the Law."
+    }
+  },
+  {
+    keywords: { it: ["Talento", "talenti"], en: ["Talent", "talents"] },
+    term: { it: "Talento", en: "Talent" },
+    description: {
+      it: "Un'antica unità di misura di moneta di altissimo valore. Nelle parabole indica le responsabilità affidate da Dio.",
+      en: "An ancient unit of currency of extremely high value. In parables, it denotes responsibilities entrusted by God."
+    }
+  },
+  {
+    keywords: { it: ["Mammona"], en: ["Mammon", "money"] },
+    term: { it: "Mammona", en: "Mammon" },
+    description: {
+      it: "Termine aramaico che personifica la ricchezza terrena elevata a idolo insidioso in contrasto con Dio.",
+      en: "An Aramaic term personifying earthly wealth, viewed as a deceptive idol set in opposition to God."
+    }
+  },
+  {
+    keywords: { it: ["Scribi", "scriba"], en: ["Scribes", "scribe"] },
+    term: { it: "Scribi", en: "Scribes" },
+    description: {
+      it: "Esperti e trascrittori della Legge di Mosè. Spesso associati ai Farisei nell'opposizione a Gesù.",
+      en: "Experts and copyists of the Law of Moses. Often associated with the Pharisees in their opposition to Jesus."
+    }
+  },
+  {
+    keywords: { it: ["Magi", "i Magi", "uomini saggi"], en: ["Magi", "wise men", "the Magi"] },
+    term: { it: "I Magi", en: "The Magi (Wise Men)" },
+    description: {
+      it: "Astronomi/astrologi d'oriente (probabilmente dalla Persia o Babilonia) che seguirono la stella di Betlemme. Il termine greco 'magoi' indica studiosi delle stelle e dell'occulto. La tradizione li chiama 're', ma il testo biblico non specifica né il numero né il titolo.",
+      en: "Astronomers/astrologers from the east (likely from Persia or Babylon) who followed the star of Bethlehem. The Greek term 'magoi' indicates scholars of the stars and the occult. Tradition calls them 'kings', but the biblical text specifies neither their number nor their title."
+    }
+  },
+  {
+    keywords: { it: ["Pasqua", "la Pasqua ebraica"], en: ["Passover", "the Passover"] },
+    term: { it: "La Pasqua (Ebraica)", en: "Passover (Pesach)" },
+    description: {
+      it: "La festa ebraica più importante, che commemora la liberazione d'Israele dalla schiavitù d'Egitto (Es 12). Ogni anno, le famiglie ebree devote salivano a Gerusalemme per celebrarla nel Tempio.",
+      en: "The most important Jewish festival, commemorating Israel's liberation from slavery in Egypt (Exod 12). Every year, devout Jewish families would ascend to Jerusalem to celebrate it at the Temple."
+    }
+  },
+  {
+    keywords: { it: ["legge di Mosè", "Legge mosaica", "la legge"], en: ["law of Moses", "Mosaic law", "the law"] },
+    term: { it: "La Legge di Mosè", en: "The Law of Moses" },
+    description: {
+      it: "Il corpo di regole e prescrizioni rituali, morali e civili rivelate da Dio a Mosè sul monte Sinai, codificate nei primi cinque libri della Bibbia (la Torah). Regolava ogni aspetto della vita ebraica.",
+      en: "The body of ritual, moral and civil rules revealed by God to Moses on Mount Sinai, codified in the first five books of the Bible (the Torah). It governed every aspect of Jewish life."
+    }
+  },
+  {
+    keywords: { it: ["dottori della legge", "dottori", "maestri della legge"], en: ["teachers of the law", "religious teachers", "doctors of the law"] },
+    term: { it: "Dottori della Legge", en: "Teachers of the Law" },
+    description: {
+      it: "Teologi e interpreti ufficiali della Torah, spesso presenti nel Tempio di Gerusalemme per insegnare e dibattere. Il giovane Gesù li sorprende con la Sua comprensione straordinaria della Scrittura.",
+      en: "Official theologians and interpreters of the Torah, often present in the Jerusalem Temple to teach and debate. The young Jesus astonishes them with His extraordinary understanding of Scripture."
+    }
+  },
+  {
+    keywords: { it: ["Egitto", "l'Egitto"], en: ["Egypt"] },
+    term: { it: "Egitto", en: "Egypt" },
+    description: {
+      it: "La grande civiltà nordafricana che nella storia biblica è associata sia alla schiavitù (Esodo) sia alla protezione providenziale. La fuga della Sacra Famiglia in Egitto ricalca il percorso del popolo d'Israele, di cui Gesù è la ricapitolazione.",
+      en: "The great North African civilization associated in biblical history with both slavery (Exodus) and providential protection. The Holy Family's flight to Egypt retraces the path of the people of Israel, of whom Jesus is the recapitulation."
+    }
   }
 ];
+

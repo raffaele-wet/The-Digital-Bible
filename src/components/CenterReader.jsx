@@ -6,12 +6,12 @@ import InsightLink from './InsightLink';
 
 const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, onNavigateToScene }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [fontSize, setFontSize] = useState(18); // default font size
+  const [fontSize, setFontSize] = useState(18); // default font size in px
 
-  // Stati per le scene multi-fonte (Preparation)
+  // Active gospel source for multi-source scenes (Preparation, Nativity, etc.)
   const [activeSource, setActiveSource] = useState('luke');
 
-  // Gestione dinamica setActiveSource al cambio schema
+  // Reset active source when the scene changes and the current key is not available
   React.useEffect(() => {
     if (scene?.sources) {
       const keys = Object.keys(scene.sources);
@@ -21,7 +21,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
     }
   }, [scene, activeSource]);
 
-  // Stati per AI Text Selection
+  // AI text selection state
   const [selectedText, setSelectedText] = useState("");
   const [selectionPos, setSelectionPos] = useState(null);
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -30,11 +30,11 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
     setTimeout(() => {
       const selection = window.getSelection();
       const text = selection.toString().trim();
-      
+
       if (text.length > 5 && !isChatOpen) {
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();
-        
+
         setSelectionPos({
           top: Math.max(10, rect.top - 45),
           left: rect.left + rect.width / 2
@@ -48,12 +48,13 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
   };
 
   const handleMouseDown = (e) => {
+    // Dismiss the floating AI button when clicking elsewhere
     if (selectionPos && !e.target.closest('#ai-float-btn')) {
       setSelectionPos(null);
     }
   };
 
-  // Interrompi audio se smonta, o cambia scena o lingua
+  // Cancel speech synthesis when the scene or language changes, and on unmount
   React.useEffect(() => {
     window.speechSynthesis.cancel();
     setIsPlaying(false);
@@ -67,15 +68,15 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
       window.speechSynthesis.cancel();
       setIsPlaying(false);
     } else {
-      window.speechSynthesis.cancel(); // safety cancel first
-      
+      window.speechSynthesis.cancel(); // safety cancel before speaking
+
       let textToRead = '';
       if (scene?.sources && scene.sources[activeSource]) {
-        textToRead = scene.sources[activeSource].verses?.map(v => 
+        textToRead = scene.sources[activeSource].verses?.map(v =>
           typeof v.text === 'string' ? v.text : (v.text[language] || v.text['it'])
         ).join(" ");
       } else {
-        textToRead = scene?.verses?.map(v => 
+        textToRead = scene?.verses?.map(v =>
           typeof v.text === 'string' ? v.text : (v.text[language] || v.text['it'])
         ).join(" ");
       }
@@ -99,7 +100,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
 
   if (!scene) return null;
 
-  // If this scene is a Menu, render a grid of visual sub-scene links
+  // Menu scene: render a visual grid of sub-scene cards
   if (scene?.type === 'menu') {
     return (
       <div className="max-w-4xl w-full mx-auto flex flex-col h-full bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700/50 p-6 md:p-10 overflow-y-auto custom-scrollbar animate-in fade-in duration-500">
@@ -111,7 +112,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
             {scene.description?.[language] || scene.description?.['it']}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {scene.subScenes?.map((sub) => (
             <button
@@ -119,9 +120,9 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
               onClick={() => onNavigateToScene && onNavigateToScene(sub.id)}
               className="group relative flex flex-col items-center justify-end overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 aspect-[4/5] focus:outline-none focus:ring-4 focus:ring-blue-500/50"
             >
-              <img 
-                src={sub.image} 
-                alt={sub.title?.[language] || sub.title?.['it']} 
+              <img
+                src={sub.image}
+                alt={sub.title?.[language] || sub.title?.['it']}
                 className="absolute inset-0 w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
                 draggable="false"
               />
@@ -138,10 +139,14 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
     );
   }
 
-  // Funzione per renderizzare il testo convertendo le parole del glossario in componenti InteractiveWord
+  /**
+   * Renders plain text, detecting glossary keywords and wrapping them in
+   * InteractiveWord components for inline tooltips.
+   */
   const renderTextWithGlossary = (text, parentIndex = 0) => {
     if (!text || !glossary || glossary.length === 0) return text;
 
+    // Build a keyword → {term, description} lookup map
     const wordMap = new Map();
     glossary.forEach(item => {
       const keywords = item.keywords?.[language] || item.keywords?.['it'] || [];
@@ -156,13 +161,13 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
     const activeKeys = Array.from(wordMap.keys());
     if (activeKeys.length === 0) return text;
 
-    // Ordina per far matchare le stringhe più lunghe per prime
+    // Sort descending by length so longer phrases match before shorter ones
     activeKeys.sort((a, b) => b.length - a.length);
 
     const escapeRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const pattern = activeKeys.map(escapeRegExp).join('|');
     const regex = new RegExp(`\\b(${pattern})\\b`, 'gi');
-    
+
     const parts = text.split(regex);
 
     return parts.map((part, i) => {
@@ -170,67 +175,105 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
       if (wordMap.has(lowerPart)) {
         const info = wordMap.get(lowerPart);
         return (
-          <InteractiveWord 
-            key={`glossary-${parentIndex}-${i}-${lowerPart}`} 
-            word={part} 
+          <InteractiveWord
+            key={`glossary-${parentIndex}-${i}-${lowerPart}`}
+            word={part}
             title={info.term}
-            explanation={info.description} 
+            explanation={info.description}
           />
         );
       }
-      return <React.Fragment key={`text-${parentIndex}-${i}`}>{part}</React.Fragment>; // testo semplice
+      return <React.Fragment key={`text-${parentIndex}-${i}`}>{part}</React.Fragment>;
     });
   };
 
-  // Funzione per renderizzare i link dei Deep Insight [[Parola|id_insight]]
-  const renderVerseText = (text) => {
+  /**
+   * Parses a verse text string and converts embedded tags into React components:
+   *  - <span className='glossary-item'>word</span>  → InteractiveWord (glossary tooltip)
+   *  - <InsightLink insightId='id'>text</InsightLink> → InsightLink
+   *  - [[word|insightId]] (legacy format)             → InsightLink
+   *  - plain text                                      → renderTextWithGlossary (auto-detection)
+   */
+  const parseVerseText = (text) => {
     if (!text) return text;
-    // Regex per [[Parola|id_insight]]
-    const insightRegex = /\[\[([^|]+)\|([^\]]+)\]\]/g;
-    const parts = [];
-    let lastIndex = 0;
-    
-    let match;
-    while ((match = insightRegex.exec(text)) !== null) {
-      // Il testo prima dell'insight lo passiamo al glossario
-      const beforeText = text.substring(lastIndex, match.index);
-      if (beforeText) {
-        parts.push(renderTextWithGlossary(beforeText, parts.length));
+
+    // Combined regex to find all supported tag patterns
+    const combinedRegex = /(<span\s+className=['"]glossary-item['"]\>.*?<\/span>|<InsightLink\s+insightId=['"].*?['"]\>.*?<\/InsightLink>|\[\[[^|\]]+\|[^\]]+\]\])/g;
+
+    const parts = text.split(combinedRegex);
+
+    return parts.map((part, index) => {
+      // 1. Manual glossary span tag
+      const spanMatch = part.match(/<span\s+className=['"]glossary-item['"]\>(.*?)<\/span>/);
+      if (spanMatch) {
+        const word = spanMatch[1];
+        const lowerWord = word.toLowerCase();
+
+        // Look up the word in the glossary
+        const glossaryEntry = glossary.find(item => {
+          const keywords = item.keywords?.[language] || item.keywords?.['it'] || [];
+          return keywords.some(k => k.toLowerCase() === lowerWord);
+        });
+
+        if (glossaryEntry) {
+          return (
+            <InteractiveWord
+              key={`manual-glossary-${index}`}
+              word={word}
+              title={glossaryEntry.term?.[language] || glossaryEntry.term?.['it']}
+              explanation={glossaryEntry.description?.[language] || glossaryEntry.description?.['it']}
+            />
+          );
+        }
+        // Fallback: render with a simple dotted underline if not in glossary
+        return <span key={`span-fallback-${index}`} className="underline decoration-dotted decoration-yellow-600/50 cursor-help">{word}</span>;
       }
-      
-      const displayWord = match[1];
-      const insightId = match[2];
-      
-      parts.push(
-        <InsightLink 
-          key={`insight-${match.index}`} 
-          insightId={insightId} 
-          onInsightClick={onInsightClick}
-        >
-          {displayWord}
-        </InsightLink>
-      );
-      
-      lastIndex = insightRegex.lastIndex;
-    }
-    
-    // Il resto del testo
-    const remainingText = text.substring(lastIndex);
-    if (remainingText) {
-      parts.push(renderTextWithGlossary(remainingText, parts.length));
-    }
-    
-    return parts;
+
+      // 2. Explicit InsightLink tag
+      const insightMatch = part.match(/<InsightLink\s+insightId=['"](.+?)['"]\>(.*?)<\/InsightLink>/);
+      if (insightMatch) {
+        const insightId = insightMatch[1];
+        const content = insightMatch[2];
+        return (
+          <InsightLink
+            key={`insight-tag-${index}`}
+            insightId={insightId}
+            onInsightClick={onInsightClick}
+          >
+            {content}
+          </InsightLink>
+        );
+      }
+
+      // 3. Legacy format: [[DisplayWord|insightId]]
+      const legacyMatch = part.match(/\[\[([^|\]]+)\|([^\]]+)\]\]/);
+      if (legacyMatch) {
+        const displayWord = legacyMatch[1];
+        const insightId = legacyMatch[2];
+        return (
+          <InsightLink
+            key={`insight-legacy-${index}`}
+            insightId={insightId}
+            onInsightClick={onInsightClick}
+          >
+            {displayWord}
+          </InsightLink>
+        );
+      }
+
+      // 4. Plain text: run through automatic glossary detection
+      return renderTextWithGlossary(part, index);
+    });
   };
 
   return (
     <div className="max-w-3xl w-full mx-auto flex flex-col bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700/50 transition-colors overflow-hidden h-full min-h-0">
-      
-      {/* Blocco Superiore (Fisso): Pulsanti Audio e Zoom */}
+
+      {/* Top toolbar: Audio controls and font size buttons */}
       <div className="shrink-0 flex-none px-6 pt-6 sm:px-10 sm:pt-8 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center justify-center space-x-4 sm:space-x-8 pb-6">
-          
-          <button 
+
+          <button
             onClick={decreaseFont}
             className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-300 dark:hover:text-gray-100 transition-all font-serif font-bold text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             title={language === 'it' ? "Riduci font" : "Decrease Font"}
@@ -243,29 +286,29 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
             <button className="p-3 rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 dark:hover:text-gray-100 transition-all focus:outline-none">
               <Rewind className="w-6 h-6" />
             </button>
-            
-            <button 
+
+            <button
               onClick={toggleAudio}
               className={`p-5 rounded-full text-white shadow-lg hover:scale-105 active:scale-95 transition-all focus:outline-none focus:ring-4 focus:ring-blue-500/50 ${
-                isPlaying 
-                  ? 'bg-red-500 hover:bg-red-600 shadow-red-500/30 ring-4 ring-red-500/30 animate-pulse' 
+                isPlaying
+                  ? 'bg-red-500 hover:bg-red-600 shadow-red-500/30 ring-4 ring-red-500/30 animate-pulse'
                   : 'bg-blue-600 hover:bg-blue-700 shadow-blue-500/30'
               }`}
               aria-label={
-                isPlaying 
-                  ? (language === 'it' ? "Ferma Lettura Vocale" : "Stop Vocal Reading") 
+                isPlaying
+                  ? (language === 'it' ? "Ferma Lettura Vocale" : "Stop Vocal Reading")
                   : (language === 'it' ? "Avvia Lettura Vocale" : "Start Vocal Reading")
               }
             >
               {isPlaying ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 fill-current translate-x-0.5" />}
             </button>
-            
+
             <button className="p-3 rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-400 dark:hover:text-gray-100 transition-all focus:outline-none">
               <FastForward className="w-6 h-6" />
             </button>
           </div>
 
-          <button 
+          <button
             onClick={increaseFont}
             className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-300 dark:hover:text-gray-100 transition-all font-serif font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             title={language === 'it' ? "Aumenta font" : "Increase Font"}
@@ -276,10 +319,10 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
         </div>
       </div>
 
-      {/* Blocco Inferiore (Scorrevole): Testo letture */}
+      {/* Scrollable reading area */}
       <div className="flex-grow overflow-y-auto min-h-0 h-full w-full custom-scrollbar px-6 pt-8 pb-24 sm:px-10 sm:pt-10 relative">
-        
-        {/* Generazione Tabs dei Vangeli (solo se la scena ha fonti alternative) */}
+
+        {/* Gospel source tabs — rendered only when the scene has multiple sources */}
         {scene?.sources && Object.keys(scene.sources).length > 1 && (
           <div className="flex justify-center flex-wrap gap-2 mb-8">
             {Object.entries(scene.sources).map(([key, source]) => (
@@ -298,6 +341,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
           </div>
         )}
 
+        {/* Scene title and scripture reference */}
         <div className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-2">
             {scene?.sources && activeSource && scene.sources[activeSource]
@@ -314,18 +358,20 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
           )}
         </div>
 
-        <div 
+        {/* Verse body */}
+        <div
           className="prose max-w-none text-gray-800 dark:text-gray-200 transition-all duration-300 ease-in-out"
           onMouseUp={handleMouseUp}
           onMouseDown={handleMouseDown}
         >
-          {/* Animazione di transizione fluida usando chiave dinamica */}
-          <div 
-            key={scene?.id + (activeSource || '')} 
+          {/* Smooth fade-in animation keyed by scene + active source */}
+          <div
+            key={scene?.id + (activeSource || '')}
             className="font-serif leading-loose text-justify relative group animate-in fade-in duration-500"
             style={{ fontSize: `${fontSize}px` }}
           >
             {scene?.verses ? (
+              // Legacy flat verses array
               scene.verses.map((verse, index) => {
                 const textContent = typeof verse.text === 'string' ? verse.text : (verse.text?.[language] || verse.text?.['it']);
                 return (
@@ -341,19 +387,20 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
                       </sup>
                     </span>
                     <span>
-                      {renderVerseText(textContent)}{' '}
+                      {parseVerseText(textContent)}{' '}
                     </span>
                   </React.Fragment>
                 );
               })
-            ) : scene?.sources && activeSource && scene.sources[activeSource] && scene.sources[activeSource].verses ? (
-              scene.sources[activeSource].verses.map((verse, index) => {
+            ) : scene?.sources && activeSource && scene.sources[activeSource]?.verses ? (
+              // Multi-source verses
+              scene.sources[activeSource].verses.map((verse) => {
                 const textContent = typeof verse.text === 'string' ? verse.text : (verse.text?.[language] || verse.text?.['it']);
-                // Extract only the chapter number digits from the reference (e.g., "Giovanni 2:1-11" -> "2")
+                // Extract only the chapter number from the reference string (e.g. "Matthew 2:1-12" → "2")
                 const refHeader = scene.sources[activeSource].ref.split(':')[0];
                 const chapterMatch = refHeader.match(/\d+$/);
                 const chapterDisplay = chapterMatch ? chapterMatch[0] : refHeader;
-                
+
                 return (
                   <React.Fragment key={verse.number}>
                     {verse.isChapterStart && (
@@ -367,7 +414,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
                       </sup>
                     </span>
                     <span>
-                      {renderVerseText(textContent)}{' '}
+                      {parseVerseText(textContent)}{' '}
                     </span>
                   </React.Fragment>
                 );
@@ -377,7 +424,7 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
         </div>
       </div>
 
-      {/* Floating Action Button AI */}
+      {/* Floating AI action button — appears on text selection */}
       {selectionPos && selectedText && !isChatOpen && (
         <button
           id="ai-float-btn"
@@ -396,10 +443,10 @@ const CenterReader = ({ scene, glossary = [], language = 'it', onInsightClick, o
         </button>
       )}
 
-      {/* Modale AI Chat */}
+      {/* AI Chat modal */}
       {isChatOpen && (
-        <ChatPopup 
-          selectedText={selectedText} 
+        <ChatPopup
+          selectedText={selectedText}
           onClose={() => setIsChatOpen(false)}
           language={language}
         />
